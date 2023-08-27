@@ -1,6 +1,6 @@
 # thaddev-web-3.0
 ---
-My website and portfolio, Rebuilt (again) with a new design using [Nuxt.js](https://nuxt.com/) and [React.js](https://vuejs.org/)
+My website and portfolio, Rebuilt (again) with a new design using [Nuxt.js](https://nuxt.com/) and [Vue.js](https://vuejs.org/)
 
 ## Dependencies used
 ### Normal
