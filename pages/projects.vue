@@ -9,7 +9,7 @@
             </div>
         </div> -->
         This section is under construction, Please visit&nbsp;
-        <a href="https://thaddev.com/#projects">the old site</a>&nbsp;for now.
+        <a href="https://v2.thaddev.com/#projects">the old site</a>&nbsp;for now.
     </MainWindow>
 </template>
 
