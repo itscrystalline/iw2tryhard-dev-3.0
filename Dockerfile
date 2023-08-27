@@ -1,19 +1,19 @@
-# Dockerfile
+FROM node:20-slim AS base
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+COPY . /app
+WORKDIR /app
 
-# base image
-FROM arm64v8/node:alpine
+FROM base AS prod-deps
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
 
-# create & set working directory
-RUN mkdir -p /thaddev-web-3.0
-WORKDIR /thaddev-web-3.0
-
-ARG GITHUB_ACCESS_TOKEN
-# copy source files
-COPY . /thaddev-web-3.0
-# install dependencies
-RUN pnpm install
-
-# start app
+FROM base AS build
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 RUN pnpm run build
-EXPOSE 3000
-ENTRYPOINT ["node", ".output/server/index.mjs"]
+
+FROM base
+COPY --from=prod-deps /app/node_modules /app/node_modules
+COPY --from=build /app/dist /app/dist
+EXPOSE 8000
+CMD [ "node", ".output/server/index.mjs"]
