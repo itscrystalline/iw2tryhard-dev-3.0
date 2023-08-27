@@ -1,0 +1,60 @@
+name: Build and publish Site image
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+      - name: Set up QEMU - arm
+        if: ${{ runner.arch == 'X86' || runner.arch == 'X64' }}
+        id: qemu-arm64
+        uses: docker/setup-qemu-action@v1
+        with:
+          image: tonistiigi/binfmt:latest
+          platforms: arm64
+      - name: Log in to the Container registry
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
+#      - name: Deploy Stack
+#        uses: kgierke/portainer-stack-deployment@v1
+#        with:
+#          portainer-url: ${{ secrets.PORTAINER_ENDPOINT }}
+#          portainer-username: ${{ secrets.PORTAINER_USERNAME }}
+#          portainer-password: ${{ secrets.PORTAINER_PASSWORD }}
+#          portainer-endpoint: 2
+#          name: thaddev-web-3.0
+#          file: docker-compose.yml

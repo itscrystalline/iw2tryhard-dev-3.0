@@ -1,0 +1,207 @@
+html
+    display: flex
+    justify-content: center
+    align-items: center
+    background-color: $realbg
+    width: 100%
+    height: 100%
+    color: $fg
+
+body
+    margin: 0
+
+    @media (max-width: $breakpoint-halfway)
+        width: 100%
+
+    @media (max-width: $breakpoint-mobile)
+        width: 100%
+        height: 100%
+
+#__nuxt
+    @media (max-width: $breakpoint-mobile)
+        width: 100%
+        height: 100%
+
+*
+    font-family: $font
+    transition: 0.2s
+
+.MainWindow
+    width: 1152px
+    height: 682px
+    flex-shrink: 0
+
+    @media (max-width: $breakpoint-tablet)
+        width: 896px
+
+    @media (max-width: $breakpoint-halfway)
+        width: 100%
+
+    @media (max-width: $breakpoint-mobile)
+        width: 100%
+        height: 100%
+
+.Main
+    width: 1152px
+    height: calc(100% - 47px)
+    flex-shrink: 0
+    background-color: $bg
+    border-radius: 0px 0px 12px 12px
+    border: 1px solid $bgborder
+    display: flex
+    align-items: center
+    justify-content: center
+
+    &.NoFlex
+        display: block
+
+    @media (max-width: $breakpoint-tablet)
+        width: 896px
+
+    @media (max-width: $breakpoint-halfway)
+        width: 100%
+
+    @media (max-width: $breakpoint-mobile)
+        border-radius: 0px
+        height: calc(100% - 100px)
+
+.TitleBar
+    width: 1152px
+    height: 47px
+    display: flex
+    border-radius: 12px 12px 0px 0px
+    border: 1px solid $titlebar-bgborder
+    background: $titlebar-bg
+
+    @media (max-width: $breakpoint-tablet)
+        width: 896px
+
+    @media (max-width: $breakpoint-halfway)
+        width: 100%
+
+    @media (max-width: $breakpoint-mobile)
+        border-radius: 0px
+
+.GithubLogoButton
+    margin: 6px
+    width: 34px
+    height: 34px
+    display: flex
+    margin-left: 0
+
+    &:hover
+        background-color: $titlebar-tabselected
+        border-radius: 8px
+        cursor: pointer
+
+.GithubLogo
+    width: 13px
+    height: 16px
+    flex-shrink: 0
+    color: $fg
+    margin: auto
+
+.Tabs
+    width: 594px
+    height: 34px
+    flex-shrink: 0
+    margin: auto
+    display: flex
+    column-gap: 6px
+    transform: translateX(20px)
+
+    @media (max-width: $breakpoint-mobile)
+        display: none
+
+.Tab
+    width: 114px
+    height: 34px
+    flex-shrink: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    color: $fg
+    border-radius: 8px
+    cursor: pointer
+    background: rgba(71, 71, 71, 0)
+    text-decoration: none
+
+    &.Selected
+        background: rgba(71, 71, 71, 1)
+
+    &:not(.Selected):hover
+        background: rgba(71, 71, 71, 0.36)
+
+    & p
+        margin: 0
+        font-size: $title3
+        font-weight: bold
+        width: fit-content
+
+    & img 
+        width: 16px
+        height: 16px
+        flex-shrink: 0
+        fill: $fg
+        margin: 7px
+
+.BottomBar
+    width: 1152px
+    height: 53px
+    border-radius: 12px 12px 0px 0px
+    border: 1px solid $titlebar-bgborder
+    background: $titlebar-bg
+    display: none
+
+    @media (max-width: $breakpoint-tablet)
+        width: 896px
+
+    @media (max-width: $breakpoint-halfway)
+        width: 100%
+
+    @media (max-width: $breakpoint-mobile)
+        border-radius: 0px
+        display: flex
+
+.BottomTabs
+    width: fit-content
+    height: 100%
+    flex-shrink: 0
+    margin: auto
+    display: flex
+
+    @media (min-width: $breakpoint-mobile)
+        display: none
+
+.BottomTab
+    width: 80px
+    height: 53px
+    flex-shrink: 0
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    color: $fg
+    cursor: pointer
+    background: rgba(71, 71, 71, 0)
+    text-decoration: none
+
+    &.Selected
+        background: rgba(71, 71, 71, 1)
+
+    &:not(.Selected):hover
+        background: rgba(71, 71, 71, 0.36)
+
+    & p
+        margin: 0
+        font-size: $caption1
+        font-weight: bold
+        width: fit-content
+
+    & img 
+        width: 16px
+        height: 16px
+        flex-shrink: 0
+        fill: $fg
+        margin: 4px
+        

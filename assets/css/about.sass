@@ -1,0 +1,99 @@
+.Centered
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    text-align: center
+    margin: 0 auto
+
+    @media (max-width: $breakpoint-mobile)
+        padding: 16px 
+        margin-top: 16px 
+    
+.Logo
+    display: flex
+    flex-direction: column
+    justify-content: center
+    padding-bottom: 45px
+    width: 192px
+    height: 52px
+    
+.Name
+    display: flex
+    flex-direction: column
+    justify-content: center
+    text-align: center
+    font-family: $fontbold
+    font-size: $title1
+    font-weight: 800
+    margin: 0
+    background: linear-gradient(135deg, #5A83FF 0%, #FE2BF4 100%)
+    background-clip: text
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+
+.Pronouns
+    color: $caption
+    text-align: center
+    font-size: $caption1
+    margin: 0
+    margin-bottom: 11px
+
+.NamesBox
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    margin-bottom: 21px
+
+.Subnames
+    color: #FFF
+    text-align: center
+    font-size: $title2
+    text-decoration-line: underline
+
+.ProfilePicture
+    display: flex
+    flex-direction: column
+    justify-content: center
+    margin-right: 16px
+
+    @media (max-width: $breakpoint-mobile)
+        margin-right: 8px
+
+.AboutBox
+    display: flex
+    flex-direction: row
+    text-align: left
+
+    @media (max-width: $breakpoint-mobile)
+        flex-direction: column
+
+.SubBox
+    display: flex
+    flex-direction: column
+    justify-content: left
+    align-items: left
+    text-align: left
+    margin-left: 16px
+    max-width: 256px
+
+.SmallTitle
+    text-align: center
+    font-size: $title3
+    font-weight: 700
+    text-align: left
+    margin: 0
+
+.SmallText
+    font-size: $caption1
+    margin: 0
+    display: inline
+
+.List
+    text-align: left
+    font-size: $title3
+    margin: 0
+    display: inline
+    padding-left: 20px
+    
