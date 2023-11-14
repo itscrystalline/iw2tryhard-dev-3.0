@@ -2,11 +2,11 @@
   <MainWindow selectedTab="about">
     <div class="Centered">
       <img src="~/assets/svg/logolong.svg" class="Logo" />
-      <h1 class="Name">Thad Choyrum</h1>
+      <h1 class="Name">"IWant2TryHard"</h1>
       <p class="Pronouns">he/him/they/them</p>
       <div class="NamesBox">
         <img width="40" height="40" src="~/assets/svg/adapfp512.svg" class="ProfilePicture" />
-        <h1 class="Subnames">IWant2TryHard / MyNameTsThad / ThadDev</h1>
+        <h1 class="Subnames">MyNameTsThad / ThadDev</h1>
       </div>
       <div class="AboutBox">
         <div class="SubBox">
@@ -23,11 +23,11 @@
           <p class="SmallTitle">I do</p>
           <ul class="List">
             <li>Full-Stack Programming</li>
-            <li>Graphic Design</li>
+            <li><p class="SmallText"><i>some</i></p> Graphic Design</li>
             <li>Game Programming</li>
             <li>Game Design</li>
             <li>Game Modding</li>
-            <li>Pixel Art <p class="SmallText">(mostly small-sized)</p></li>
+            <li><p class="SmallText"><i>some</i></p> Pixel Art <p class="SmallText">(mostly small-sized)</p></li>
           </ul>
         </div>
         <div class="SubBox">
@@ -35,7 +35,7 @@
           <ul class="List">
             <li>Technology</li>
             <li>Games <p class="SmallText">(mostly Minecraft)</p></li>
-            <li>Being a Sysadmin</li>
+            <li>Cosplaying as a Sysadmin</li>
             <li>High quality Designs</li>
             <li>Fixing Problems <p class="SmallText">(sometimes)</p></li>
           </ul>

@@ -2,7 +2,6 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/css/main.sass'],
-  modules: ['@nuxtjs/google-fonts'],
   vite: {
     css: {
       preprocessorOptions: {
@@ -11,10 +10,5 @@ export default defineNuxtConfig({
         }
       }
     }
-  },
-  googleFonts: {
-    families: {
-      Cantarell: true
-    }
-  },
+  }
 })
