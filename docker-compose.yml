@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  thaddev:
+    image: thaddev3:latest
+    restart: always
+    ports:
+      - "3031:3000"
