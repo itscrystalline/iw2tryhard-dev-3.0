@@ -15,18 +15,15 @@
 # EXPOSE 3000
 # ENTRYPOINT ["node", ".output/server/index.mjs"]
 
-FROM node:20-slim AS base
+FROM node:20
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
 COPY . /app
 WORKDIR /app
 
-FROM base AS build
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
-RUN pnpm install
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install
 RUN pnpm run build
 
-FROM base
 EXPOSE 3000
 ENTRYPOINT ["node", "/app/.output/server/index.mjs"]
