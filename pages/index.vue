@@ -3,7 +3,7 @@
     <div class="Centered">
       <img src="~/assets/svg/logolong.svg" class="Logo" />
       <h1 class="Name">"IWant2TryHard"</h1>
-      <p class="Pronouns">he/him/they/them</p>
+      <p class="Pronouns">he/him/they/them <i>:3</i></p>
       <div class="NamesBox">
         <img width="40" height="40" src="~/assets/svg/adapfp512.svg" class="ProfilePicture" />
         <h1 class="Subnames">MyNameTsThad / ThadDev</h1>
