@@ -2,7 +2,7 @@ version: '3'
 
 services:
   thaddev:
-    image: thaddev3:latest
+    image: ghcr.io/mynametsthad/thaddev-web-3.0:main
     restart: always
     ports:
       - "3031:3000"
