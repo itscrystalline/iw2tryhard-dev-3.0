@@ -1,12 +1,4 @@
 <template>
-  <Head>
-    <Title>tryhard's site</Title>
-    <Meta property="og:title" content="IWant2TryHard's Site" />
-    <Meta property="og:description" content="my place on the internet :3" />
-    <Meta property="og:image" content="https://thaddev.com/favicon.ico" />
-    <Meta property="og:url" content="https://thaddev.com" />
-    <Meta name="theme-color" content="#A25DFA" />
-  </Head>
   <div class="MainWindow">
     <div class="TitleBar">
       <div class="Tabs">
