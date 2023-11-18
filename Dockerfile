@@ -15,7 +15,7 @@
 # EXPOSE 3000
 # ENTRYPOINT ["node", ".output/server/index.mjs"]
 
-FROM node:20
+FROM node:20-alpine
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable

@@ -13,37 +13,10 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: buildjet-4vcpu-ubuntu-2204-arm
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        
-#      - name: Install Node.js
-#        uses: actions/setup-node@v3
-#        with:
-#          node-version: 16
-#
-#      - uses: pnpm/action-setup@v2
-#        name: Install pnpm
-#        with:
-#          version: 8.6.12
-#          run_install: false
-#
-#      - name: Get pnpm store directory
-#        shell: bash
-#        run: |
-#          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-#
-#      - uses: actions/cache@v3
-#        name: Setup pnpm cache
-#        with:
-#          path: ${{ env.STORE_PATH }}
-#          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-#          restore-keys: |
-#            ${{ runner.os }}-pnpm-store-
-#
-#      - name: Install dependencies
-#        run: pnpm install
       
       - name: Set up QEMU - arm
         if: ${{ runner.arch == 'X86' || runner.arch == 'X64' }}
@@ -72,13 +45,3 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-
-#      - name: Deploy Stack
-#        uses: kgierke/portainer-stack-deployment@v1
-#        with:
-#          portainer-url: ${{ secrets.PORTAINER_ENDPOINT }}
-#          portainer-username: ${{ secrets.PORTAINER_USERNAME }}
-#          portainer-password: ${{ secrets.PORTAINER_PASSWORD }}
-#          portainer-endpoint: 2
-#          name: thaddev-web-3.0
-#          file: docker-compose.yml
