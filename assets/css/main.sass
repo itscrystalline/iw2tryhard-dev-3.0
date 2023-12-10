@@ -35,6 +35,10 @@ body
     height: 682px
     flex-shrink: 0
 
+    @media screen and (max-height: 682px)
+        height: 100%
+        
+
     @media (max-width: $breakpoint-tablet)
         width: 896px
 
@@ -55,6 +59,7 @@ body
     display: flex
     align-items: center
     justify-content: center
+    overflow: scroll
 
     &.NoFlex
         display: block
@@ -87,13 +92,12 @@ body
     @media (max-width: $breakpoint-mobile)
         border-radius: 0px
 
-.GithubLogoButton
+.LogoButton
     user-select: none
     margin: 6px
     width: 34px
     height: 34px
     display: flex
-    margin-left: 0
 
     &:hover
         background-color: $titlebar-tabselected
@@ -108,15 +112,23 @@ body
     color: $fg
     margin: auto
 
+
+.LinksIcon
+    user-select: none
+    width: 16px
+    height: 16px
+    flex-shrink: 0
+    color: $fg
+    margin: auto
+
 .Tabs
     user-select: none
-    width: 594px
+    width: fit-content
     height: 34px
     flex-shrink: 0
     margin: auto
     display: flex
     column-gap: 6px
-    transform: translateX(20px)
 
     @media (max-width: $breakpoint-mobile)
         display: none

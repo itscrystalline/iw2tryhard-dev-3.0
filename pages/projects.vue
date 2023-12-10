@@ -1,15 +1,6 @@
 <template>
     <MainWindow selectedTab="projects">
-        <!-- <div class="Centered">
-            <div class="CategoryBox">
-                <p class="CategoryHeader">By Category</p>
-            </div>
-            <div class="CategoryBox">
-                <p class="CategoryHeader">By Technologies Used</p>
-            </div>
-        </div> -->
-        This section is under construction (im too lazy to do it rn), Please visit&nbsp;
-        <a href="https://v2.thaddev.com/#projects">the old site</a>&nbsp;for now.
+        <iframe src="https://v2.thaddev.com/#projects" frameborder="0" class="ProjectsFrame"></iframe>
     </MainWindow>
 </template>
 

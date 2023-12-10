@@ -2,6 +2,10 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/css/main.sass'],
+  modules: ['@nuxt/ui'],
+  ui: {
+    global: true,
+  },
   vite: {
     css: {
       preprocessorOptions: {

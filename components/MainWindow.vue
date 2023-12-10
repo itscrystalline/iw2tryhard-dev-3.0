@@ -1,11 +1,20 @@
 <template>
   <div class="MainWindow">
     <div class="TitleBar">
+      <UDropdown :items="items" :popper="{ placement: 'bottom-start' }">
+        <NuxtLink class="LogoButton">
+          <img src="~/assets/svg/chain-link.svg" class="LinksIcon" />
+        </NuxtLink>
+      </UDropdown>
       <div class="Tabs">
         <NuxtLink v-bind:class="getClass('about', false)" to="/">
           <img src="~/assets/svg/info-symbolic.svg" />
           <p>About</p>
         </NuxtLink>
+        <!-- <NuxtLink v-bind:class="getClass('faq', false)" to="/faq">
+          <img src="~/assets/svg/help-faq.svg" />
+          <p>FAQ</p>
+        </NuxtLink> -->
         <NuxtLink v-bind:class="getClass('projects', false)" to="/projects">
           <img src="~/assets/svg/build-alt-symbolic.svg" />
           <p>Projects</p>
@@ -23,9 +32,9 @@
           <p>Blog</p>
         </NuxtLink>
       </div>
-      <a class="GithubLogoButton" href="https://github.com/MyNameTsThad/thaddev-web-3.0">
+      <NuxtLink class="LogoButton" to="https://github.com/MyNameTsThad/thaddev-web-3.0">
         <img src="~/assets/svg/github-desktop-symbolic.svg" class="GithubLogo" />
-      </a>
+      </NuxtLink>
     </div>
     <div v-bind:class="getFlex()">
       <slot />
@@ -36,6 +45,10 @@
           <img src="~/assets/svg/info-symbolic.svg" />
           <p>About</p>
         </NuxtLink>
+        <!-- <NuxtLink v-bind:class="getClass('faq', true)" to="/faq">
+          <img src="~/assets/svg/help-faq.svg" />
+          <p>FAQ</p>
+        </NuxtLink> -->
         <NuxtLink v-bind:class="getClass('projects', true)" to="/projects">
           <img src="~/assets/svg/build-alt-symbolic.svg" />
           <p>Projects</p>
@@ -77,4 +90,13 @@ export default {
     }
   }
 }
+</script>
+
+<script setup lang="ts">
+const items = [
+  [{
+    label: 'This section is not done yet',
+  }]
+]
+
 </script>
