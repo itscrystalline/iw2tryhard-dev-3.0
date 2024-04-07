@@ -17,14 +17,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      
-      - name: Set up QEMU - arm
-        if: ${{ runner.arch == 'X86' || runner.arch == 'X64' }}
-        id: qemu-arm64
-        uses: docker/setup-qemu-action@v1
-        with:
-          image: tonistiigi/binfmt:latest
-          platforms: arm64
+
       - name: Log in to the Container registry
         uses: docker/login-action@v2
         with:
