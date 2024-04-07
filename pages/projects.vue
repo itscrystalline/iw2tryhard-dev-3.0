@@ -1,6 +1,6 @@
 <template>
     <MainWindow selectedTab="projects">
-        <iframe src="https://v2.thaddev.com/#projects" frameborder="0" class="ProjectsFrame"></iframe>
+        <iframe src="https://v2.iw2tryhard.dev/#projects" frameborder="0" class="ProjectsFrame"></iframe>
     </MainWindow>
 </template>
 
