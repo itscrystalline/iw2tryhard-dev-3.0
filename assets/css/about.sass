@@ -15,7 +15,7 @@
     flex-direction: column
     justify-content: center
     padding-bottom: 45px
-    width: 192px
+    width: 309px
     user-select: none
     
 .Name
@@ -26,8 +26,7 @@
     font-family: $fontbold
     font-size: $title1
     font-weight: 800
-    margin: 0
-    margin-bottom: -5px
+    margin: 0 0 -5px
     background: linear-gradient(135deg, #5A83FF 0%, #FE2BF4 100%)
     background-clip: text
     -webkit-background-clip: text
@@ -37,22 +36,27 @@
     color: $caption
     text-align: center
     font-size: $caption1
-    margin: 0
-    margin-bottom: 11px
+    margin: 0 0 11px
 
 .NamesBox
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+.SameLine
     display: flex
     flex-direction: row
     justify-content: center
     align-items: center
-    margin-bottom: 21px
 
 .Subnames
     color: #FFF
     text-align: center
-    font-size: $title2
+    font-size: $title3
     text-decoration-line: underline
-    font-weight: 700
+    font-weight: 500
+    margin-bottom: 30px
 
 .ProfilePicture
     display: flex

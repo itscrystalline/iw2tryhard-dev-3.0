@@ -1,13 +1,15 @@
 <template>
   <MainWindow selectedTab="about">
     <div class="Centered">
-      <img src="~/assets/svg/logolong.svg" class="Logo" />
-      <h1 class="Name">"IWant2TryHard"</h1>
-      <p class="Pronouns">he/him/they/them <i>:3</i></p>
+      <img src="~/assets/svg/nicklogolong.svg" class="Logo" />
       <div class="NamesBox">
-        <img width="40" height="40" src="~/assets/svg/adapfp.svg" class="ProfilePicture" />
-        <h1 class="Subnames">MyNameTsThad / ThadDev</h1>
+        <div class="SameLine">
+          <img width="40" height="40" src="~/assets/svg/adapfp.svg" class="ProfilePicture" />
+          <h1 class="Name">"IWant2TryHard"</h1>
+        </div>
+        <p class="Pronouns">he/him/they/them <i>:3</i></p>
       </div>
+      <h1 class="Subnames">(MyNameTsThad / ThadDev)</h1>
       <div class="AboutBox">
         <div class="SubBox">
           <p class="SmallTitle">I am</p>
