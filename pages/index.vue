@@ -17,10 +17,11 @@
         <div class="SubBox">
           <p class="SmallTitle">I am</p>
           <ul class="List">
-            <li>A 15 year old</li>
+            <li>A 16 year old</li>
+            <li><p class="SmallText">aroace demiboy</p></li>
             <li>From Thailand</li>
             <li>Studying Computer Engineering in Bangkok</li>
-            <li>A hobbyist Programmer</li>
+            <li>A <p class="SmallText">not so hobbyist anymore</p> Programmer</li>
             <li>A Design Enthusiast (UI/UX)</li>
           </ul>
         </div>
