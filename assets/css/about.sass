@@ -7,16 +7,14 @@
     margin: 0 auto
 
     @media (max-width: $breakpoint-mobile)
-        padding: 16px 
+        padding: 64px
         margin-top: 16px 
     
 .Logo
-    display: flex
-    flex-direction: column
-    justify-content: center
-    padding-bottom: 45px
-    width: 309px
+    margin-bottom: 45px
     user-select: none
+    color: var(--fg)
+    fill: var(--fg)
     
 .Name
     display: flex
@@ -27,13 +25,13 @@
     font-size: $title1
     font-weight: 800
     margin: 0 0 -5px
-    background: linear-gradient(135deg, #5A83FF 0%, #FE2BF4 100%)
+    background: linear-gradient(135deg, $gradient-start 0%, $gradient-end 100%)
     background-clip: text
     -webkit-background-clip: text
     -webkit-text-fill-color: transparent
 
 .Pronouns
-    color: $caption
+    color: var(--caption)
     text-align: center
     font-size: $caption1
     margin: 0 0 11px
@@ -51,7 +49,7 @@
     align-items: center
 
 .Subnames
-    color: #FFF
+    color: var(--fg)
     text-align: center
     font-size: $title3
     text-decoration-line: underline
@@ -71,6 +69,10 @@
     display: flex
     flex-direction: row
     text-align: left
+    margin-bottom: 30px
+
+    &.End
+        margin-bottom: 0
 
     @media (max-width: $breakpoint-mobile)
         flex-direction: column
@@ -79,13 +81,11 @@
     display: flex
     flex-direction: column
     justify-content: left
-    align-items: left
     text-align: left
     margin-left: 16px
     max-width: 256px
 
 .SmallTitle
-    text-align: center
     font-size: $title3
     font-weight: 700
     text-align: left
@@ -95,6 +95,13 @@
     font-size: $caption1
     margin: 0
     display: inline
+
+.Link
+    font-size: $title3
+    color: var(--caption)
+    margin: 0
+    display: inline
+    text-decoration: underline
 
 .List
     text-align: left

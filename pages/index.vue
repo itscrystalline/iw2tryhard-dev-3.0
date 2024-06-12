@@ -1,13 +1,16 @@
 <template>
   <MainWindow selectedTab="about">
     <div class="Centered">
-      <img src="~/assets/svg/nicklogolong.svg" class="Logo" />
+      <Logo/>
       <div class="NamesBox">
         <div class="SameLine">
-          <img width="40" height="40" src="~/assets/svg/adapfp.svg" class="ProfilePicture" />
+          <img width="40" height="40" src="~/assets/svg/adapfp.svg" class="ProfilePicture" alt="pfp">
           <h1 class="Name">"IWant2TryHard"</h1>
         </div>
-        <p class="Pronouns">he/him/they/them <i>:3</i></p>
+        <p class="Pronouns" @mouseover="hover = true" @mouseleave="hover = false">
+          {{ hover ? "they/them/he/him" : "they/he" }}
+          <i> :3</i>
+        </p>
       </div>
       <h1 class="Subnames">(MyNameTsThad / ThadDev)</h1>
       <div class="AboutBox">
@@ -44,10 +47,34 @@
           </ul>
         </div>
       </div>
+      <div class="AboutBox End">
+        <div class="SubBox">
+          <NuxtLink class="Link" to="https://github.com/MyNameTsThad/">Github</NuxtLink>
+        </div>
+        <div class="SubBox">
+          <NuxtLink class="Link" to="mailto:real@iw2tryhard.dev">Email</NuxtLink>
+        </div>
+        <div class="SubBox">
+          <NuxtLink class="Link" to="https://twitter.com/iwant2tryhard/">Twitter</NuxtLink>
+        </div>
+        <div class="SubBox">
+          <NuxtLink class="Link" to="https://mastodon.social/@IWant2TryHard">Fedi</NuxtLink>
+        </div>
+        <div class="SubBox">
+          <NuxtLink class="Link" to="https://www.reddit.com/user/Main-Information-489/">Reddit</NuxtLink>
+        </div>
+      </div>
     </div>
   </MainWindow>
 </template>
 
-<script>
+<script lang="ts">
 import '~/assets/css/about.sass'
+export default {
+  data() {
+    return {
+      hover: false
+    }
+  }
+}
 </script>

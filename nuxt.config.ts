@@ -1,8 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    devtools: {enabled: true},
+    devtools: {
+      enabled: true,
+
+      timeline: {
+        enabled: true
+      }
+    },
     css: ['~/assets/css/main.sass'],
-    modules: ['@nuxt/ui'],
+    modules: ['@nuxt/ui', '@nuxtjs/color-mode'],
     ui: {
         global: true,
     },
@@ -22,5 +28,8 @@ export default defineNuxtConfig({
                 {rel: 'icon', type: 'image/png', href: '/logoshort-32x32.png', sizes: '32x32'},
             ]
         }
+    },
+    colorMode: {
+        classSuffix: ''
     }
 })

@@ -1,6 +1,13 @@
 <template>
     <MainWindow selectedTab="blog">
-        This section is under construction (im too lazy to do it rn), Please visit&nbsp;
-            <a href="https://v2.iw2tryhard.dev/blog">the old site</a>&nbsp;for now.
+      <div style="display: flex; flex-direction: column; justify-self: center">
+        <p style="margin-bottom: 50px">what old site ?</p>
+        <br/>
+        hmm
+        <br/>
+        therres nothing here,,,.,,.,
+        <br/>
+        surely one day i will fill these in right ??
+      </div>
     </MainWindow>
 </template>

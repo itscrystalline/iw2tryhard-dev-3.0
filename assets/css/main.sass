@@ -1,246 +1,302 @@
 @font-face
-    font-family: InterVariable
-    font-style: normal
-    font-weight: 100 900
-    font-display: swap
-    src: url("/InterVariable.woff2") format("woff2")
+  font-family: InterVariable
+  font-style: normal
+  font-weight: 100 900
+  font-display: swap
+  src: url("/InterVariable.woff2") format("woff2")
 
 @font-face
-    font-family: InterVariable
-    font-style: italic
-    font-weight: 100 900
-    font-display: swap
-    src: url("/InterVariable-Italic.woff2") format("woff2")
+  font-family: InterVariable
+  font-style: italic
+  font-weight: 100 900
+  font-display: swap
+  src: url("/InterVariable-Italic.woff2") format("woff2")
+
+
+@keyframes gradient-scroll
+  0%
+    background-position: 0% 0%
+  50%
+    background-position: 100% 0%
+  100%
+    background-position: 200% 0%
+
+@keyframes gradient-scroll-fast
+  0%
+    background-position: 0% 0%
+  50%
+    background-position: 50% 0%
+  100%
+    background-position: 100% 0%
 
 
 html
-    display: flex
-    justify-content: center
-    align-items: center
-    background-color: $realbg
-    width: 100%
-    height: 100%
-    color: $fg
-    -ms-overflow-style: none
-    scrollbar-width: none
+  display: flex
+  justify-content: center
+  align-items: center
+  background-image: linear-gradient(-90deg, var(--gradient-blur-start), var(--gradient-blur-end), var(--gradient-blur-start))
+  background-repeat: repeat
+  background-attachment: scroll
+  background-size: 200% 100%
+  animation: gradient-scroll 15s linear infinite
+  width: 100%
+  height: 100%
+  color: var(--fg)
+  -ms-overflow-style: none
+  scrollbar-width: none
 
-::-webkit-scrollbar 
-    display: none
+  &.pride
+    background-image: linear-gradient(-90deg, var(--gradient-blur-start), var(--gradient-blur-end), var(--bg), var(--gradient-blur-end), var(--gradient-blur-start))
+    background-size: 50% 100%
+    animation: gradient-scroll-fast 7s linear infinite
+
+::-webkit-scrollbar
+  display: none
 
 
 body
-    margin: 0
+  margin: 0
 
-    @media (max-width: $breakpoint-halfway)
-        width: 100%
+  @media (max-width: $breakpoint-halfway)
+    width: 100%
 
-    @media (max-width: $breakpoint-mobile)
-        width: 100%
-        height: 100%
+  @media (max-width: $breakpoint-mobile)
+    width: 100%
+    height: 100%
 
 #__nuxt
-    @media (max-width: $breakpoint-mobile)
-        width: 100%
-        height: 100%
+  @media (max-width: $breakpoint-mobile)
+    width: 100%
+    height: 100%
 
 *
-    font-family: $font
-    transition: 0.2s
+  font-family: $font
+  transition: 0.2s
 
 .MainWindow
-    width: 1152px
-    height: 682px
-    flex-shrink: 0
+  width: 1150px
+  height: 682px
+  flex-shrink: 0
 
-    @media screen and (max-height: 682px)
-        height: 100vh
+  @media screen and (max-height: 682px)
+    height: 100vh
 
-    @media (max-width: $breakpoint-tablet)
-        width: 896px
+  @media (max-width: $breakpoint-tablet)
+    width: 896px
 
-    @media (max-width: $breakpoint-halfway)
-        width: 100%
+  @media (max-width: $breakpoint-halfway)
+    width: 100%
 
-    @media (max-width: $breakpoint-mobile)
-        width: 100%
-        height: 100%
+  @media (max-width: $breakpoint-mobile)
+    width: 100%
+    height: 100%
 
 .Main
-    width: 1152px
-    height: calc(100% - 47px)
-    flex-shrink: 0
-    background-color: $bg
-    border-radius: 0px 0px 12px 12px
-    border: 1px solid $bgborder
-    display: flex
-    align-items: center
-    justify-content: center
-    overflow-y: scroll
-    box-sizing: content-box
+  width: 1150px
+  height: calc(100% - 47px)
+  flex-shrink: 0
+  background-color: var(--bg)
+  border-radius: 0 0 12px 12px
+  border: 1px solid var(--bgborder)
+  border-top: none
+  display: flex
+  align-items: center
+  justify-content: center
+  overflow-y: scroll
+  box-sizing: content-box
 
-    &.NoFlex
-        display: block
+  &.NoFlex
+    display: block
 
-    @media (max-width: $breakpoint-tablet)
-        width: 896px
+  @media (max-width: $breakpoint-tablet)
+    width: 894px
 
-    @media (max-width: $breakpoint-halfway)
-        width: 100%
+  @media (max-width: $breakpoint-halfway)
+    width: 100%
 
-    @media (max-width: $breakpoint-mobile)
-        border-radius: 0px
-        height: calc(100% - 100px)
+  @media (max-width: $breakpoint-mobile)
+    border-radius: 0
+    height: calc(100% - 100px)
 
 .TitleBar
-    user-select: none
-    width: 1152px
-    height: 47px
-    display: flex
-    border-radius: 12px 12px 0px 0px
-    border: 1px solid $titlebar-bgborder
-    background: $titlebar-bg
+  user-select: none
+  width: 1152px
+  height: 47px
+  display: flex
+  border-radius: 12px 12px 0 0
+  border: 1px solid var(--titlebar-bgborder)
+  background: var(--titlebar-bg)
 
-    @media (max-width: $breakpoint-tablet)
-        width: 896px
+  @media (max-width: $breakpoint-tablet)
+    width: 896px
 
-    @media (max-width: $breakpoint-halfway)
-        width: 100%
+  @media (max-width: $breakpoint-halfway)
+    width: calc(100% + 1.5px)
 
-    @media (max-width: $breakpoint-mobile)
-        border-radius: 0px
+  @media (max-width: $breakpoint-mobile)
+    border-radius: 0
 
 .LogoButton
-    user-select: none
-    margin: 6px
-    width: 34px
-    height: 34px
-    display: flex
+  user-select: none
+  margin: 6px
+  width: 34px
+  height: 34px
+  display: flex
 
-    &:hover
-        background-color: $titlebar-tabselected
-        border-radius: 8px
-        cursor: pointer
+  &.End
+    margin: 6px 6px 6px 0
 
-.GithubLogo
-    user-select: none
-    width: 13px
-    height: 16px
-    flex-shrink: 0
-    color: $fg
-    margin: auto
+  &:hover
+    background-color: var(--titlebar-tabhover)
+    border-radius: 8px
+    cursor: pointer
 
-.LinksIcon
-    user-select: none
+.ThinIcon
+  user-select: none
+  width: 13px
+  height: 16px
+  flex-shrink: 0
+  color: var(--fg)
+  filter: var(--fg-icon)
+  margin: auto
+
+.Icon
+  user-select: none
+  width: 16px
+  height: 16px
+  flex-shrink: 0
+  color: var(--fg)
+  filter: var(--fg-icon)
+  margin: auto
+
+.Tabs
+  user-select: none
+  width: fit-content
+  height: 34px
+  flex-shrink: 0
+  margin: auto
+  display: flex
+  column-gap: 6px
+
+  @media (max-width: $breakpoint-mobile)
+    display: none
+
+.Tab
+  user-select: none
+  width: 114px
+  height: 34px
+  flex-shrink: 0
+  display: flex
+  align-items: center
+  justify-content: center
+  color: var(--fg)
+  border-radius: 8px
+  cursor: pointer
+  background: none
+  text-decoration: none
+
+  &.Selected
+    background: var(--titlebar-tabselected)
+
+  &:not(.Selected):hover
+    background: var(--titlebar-tabhover)
+
+  & p
+    margin: 0
+    font-size: $title3
+    font-weight: bold
+    width: fit-content
+
+  & img
     width: 16px
     height: 16px
     flex-shrink: 0
-    color: $fg
-    margin: auto
-
-.Tabs
-    user-select: none
-    width: fit-content
-    height: 34px
-    flex-shrink: 0
-    margin: auto
-    display: flex
-    column-gap: 6px
-
-    @media (max-width: $breakpoint-mobile)
-        display: none
-
-.Tab
-    user-select: none
-    width: 114px
-    height: 34px
-    flex-shrink: 0
-    display: flex
-    align-items: center
-    justify-content: center
-    color: $fg
-    border-radius: 8px
-    cursor: pointer
-    background: rgba(71, 71, 71, 0)
-    text-decoration: none
-
-    &.Selected
-        background: rgba(71, 71, 71, 1)
-
-    &:not(.Selected):hover
-        background: rgba(71, 71, 71, 0.36)
-
-    & p
-        margin: 0
-        font-size: $title3
-        font-weight: bold
-        width: fit-content
-
-    & img
-        width: 16px
-        height: 16px
-        flex-shrink: 0
-        fill: $fg
-        margin: 7px
+    fill: var(--fg)
+    margin: 7px
+    filter: var(--fg-icon)
 
 .BottomBar
-    user-select: none
-    width: 1152px
-    height: 53px
-    border-radius: 12px 12px 0px 0px
-    border: 1px solid $titlebar-bgborder
-    background: $titlebar-bg
-    display: none
+  user-select: none
+  width: 1152px
+  height: 53px
+  border-radius: 12px 12px 0 0
+  border: 1px solid var(--titlebar-bgborder)
+  background: var(--titlebar-bg)
+  display: none
 
-    @media (max-width: $breakpoint-tablet)
-        width: 896px
+  @media (max-width: $breakpoint-tablet)
+    width: 896px
 
-    @media (max-width: $breakpoint-halfway)
-        width: 100%
+  @media (max-width: $breakpoint-halfway)
+    width: calc(100% + 1.5px)
 
-    @media (max-width: $breakpoint-mobile)
-        border-radius: 0px
-        display: flex
+  @media (max-width: $breakpoint-mobile)
+    border-radius: 0
+    display: flex
 
 .BottomTabs
-    user-select: none
-    width: fit-content
-    height: 100%
-    flex-shrink: 0
-    margin: auto
-    display: flex
+  user-select: none
+  width: fit-content
+  height: 100%
+  flex-shrink: 0
+  margin: auto
+  display: flex
 
-    @media (min-width: $breakpoint-mobile)
-        display: none
+  @media (min-width: $breakpoint-mobile)
+    display: none
 
 .BottomTab
-    user-select: none
-    width: 80px
-    height: 53px
+  user-select: none
+  width: 80px
+  height: 53px
+  flex-shrink: 0
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  color: var(--fg)
+  cursor: pointer
+  background: none
+  text-decoration: none
+
+  &.Selected
+    background: var(--titlebar-tabselected)
+
+  &:not(.Selected):hover
+    background: var(--titlebar-tabhover)
+
+  & p
+    margin: 0
+    font-size: $caption1
+    font-weight: bold
+    width: fit-content
+
+  & img
+    width: 16px
+    height: 16px
     flex-shrink: 0
-    display: flex
-    flex-direction: column
-    align-items: center
-    justify-content: center
-    color: $fg
-    cursor: pointer
-    background: rgba(71, 71, 71, 0)
-    text-decoration: none
+    fill: var(--fg)
+    filter: var(--fg-icon)
+    margin: 4px
 
-    &.Selected
-        background: rgba(71, 71, 71, 1)
+.HoverText
+  user-select: none
+  color: var(--fg)
+  font-size: $caption1
+  font-weight: bold
 
-    &:not(.Selected):hover
-        background: rgba(71, 71, 71, 0.36)
+  position: absolute
+  margin-left: auto
+  margin-right: auto
+  top: 0
+  left: 0
+  right: 0
+  text-align: center
+  display: none
 
-    & p
-        margin: 0
-        font-size: $caption1
-        font-weight: bold
-        width: fit-content
+  @media (min-width: $breakpoint-mobile)
+    display: block
 
-    & img
-        width: 16px
-        height: 16px
-        flex-shrink: 0
-        fill: $fg
-        margin: 4px
+  @media (min-height: 682px)
+    top: 3%
+
