@@ -8,14 +8,14 @@
 
     @media (max-width: $breakpoint-mobile)
         padding: 64px
-        margin-top: 16px 
-    
+        margin-top: 16px
+
 .Logo
     margin-bottom: 45px
     user-select: none
     color: var(--fg)
     fill: var(--fg)
-    
+
 .Name
     display: flex
     flex-direction: column
@@ -30,10 +30,20 @@
     -webkit-background-clip: text
     -webkit-text-fill-color: transparent
 
-.Pronouns
-    color: var(--caption)
+.Big
+    display: flex
+    flex-direction: column
+    justify-content: center
     text-align: center
-    font-size: $caption1
+    font-family: $fontbold
+    font-size: $title1
+    font-weight: 800
+    margin: 0 0 -5px
+
+.Pronouns
+    color: var(--fg)
+    text-align: center
+    font-size: $title3
     margin: 0 0 11px
 
 .NamesBox
@@ -49,21 +59,18 @@
     align-items: center
 
 .Subnames
-    color: var(--fg)
+    color: var(--caption)
     text-align: center
-    font-size: $title3
-    text-decoration-line: underline
-    font-weight: 500
+    font-size: $caption1
+    font-weight: 300
     margin-bottom: 30px
 
 .ProfilePicture
     display: flex
     flex-direction: column
     justify-content: center
-    margin-right: 16px
-
-    @media (max-width: $breakpoint-mobile)
-        margin-right: 8px
+    margin-right: 4px
+    margin-left: 8px
 
 .AboutBox
     display: flex
@@ -111,4 +118,3 @@
     margin: 0
     display: inline
     padding-left: 20px
-    
