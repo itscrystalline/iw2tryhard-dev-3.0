@@ -100,7 +100,9 @@
                     >
                 </div>
                 <div class="SubBox">
-                    <NuxtLink class="Link" to="https://github.com/MyNameTsThad/"
+                    <NuxtLink
+                        class="Link"
+                        to="https://github.com/itscrystalline/"
                         >Github</NuxtLink
                     >
                 </div>
