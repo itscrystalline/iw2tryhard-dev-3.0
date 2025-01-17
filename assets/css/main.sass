@@ -34,21 +34,17 @@ html
   display: flex
   justify-content: center
   align-items: center
-  background-image: linear-gradient(-90deg, var(--gradient-blur-start), var(--gradient-blur-end), var(--gradient-blur-start))
   background-repeat: repeat
   background-attachment: scroll
-  background-size: 200% 100%
-  animation: gradient-scroll 15s linear infinite
+  background-size: cover
+  animation: gradient-scroll 30s linear infinite
   width: 100%
   height: 100%
   color: var(--fg)
   -ms-overflow-style: none
   scrollbar-width: none
-
-  &.pride
-    background-image: linear-gradient(-90deg, var(--gradient-blur-start), var(--gradient-blur-end), var(--bg), var(--gradient-blur-end), var(--gradient-blur-start))
-    background-size: 50% 100%
-    animation: gradient-scroll-fast 7s linear infinite
+  background-image: linear-gradient(-90deg, var(--gradient-blur-start), var(--gradient-blur-end), var(--bg), var(--gradient-blur-end), var(--gradient-blur-start), var(--gradient-blur-end), var(--bg), var(--gradient-blur-end), var(--gradient-blur-start))
+  background-size: 200% 100%
 
 ::-webkit-scrollbar
   display: none
@@ -299,4 +295,3 @@ body
 
   @media (min-height: 682px)
     top: 3%
-

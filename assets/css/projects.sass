@@ -16,7 +16,7 @@
   gap: 32px
   width: 100%
   height: 100%
-  padding: 48px 64px
+  padding: 48px 48px
   overflow: auto
 
   @media (max-width: $breakpoint-mobile)
@@ -27,16 +27,63 @@
   border: 1px solid var(--cardborder)
   box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px
   border-radius: 8px
-  padding: 16px
+  display: flex
+  flex-direction: column
 
-  h1
-    font-size: $title2
-    font-weight: 700
-    margin: 0
-    padding: 0
+  img
+    border-radius: 8px 8px 0 0
+    width: 100%
+    height: 150px
+    object-fit: cover
 
-  p
-    font-size: $title3
-    margin: 0
-    padding: 0
-    color: var(--caption)
+  .content
+    padding: 11px 16px 16px 16px
+    flex: 1
+
+    h1
+        font-size: $title2
+        font-weight: 700
+        margin: 0
+        padding: 0
+
+    p
+        font-size: $title3
+        margin: 0
+        padding: 0
+        color: var(--caption)
+
+  .buttons
+    padding: 0 16px 16px 16px
+    display: flex
+    flex-wrap: wrap
+    flex-direction: row-reverse
+    margin-top: auto
+
+    a
+      display: inline-block
+      margin-right: 8px
+      margin-bottom: 8px
+      padding: 8px 16px
+      border-radius: 8px
+      font-size: $title3
+      font-weight: 700
+      text-decoration: none
+      color: var(--fg)
+      background-color: var(--buttonbg)
+
+      div
+        display: flex
+        align-items: center
+        justify-content: center
+
+        img
+            border-radius: 0px
+            width: 16px
+            height: 16px
+            flex-shrink: 0
+            margin-left: 7px
+            fill: var(--fg)
+            filter: var(--fg-icon)
+
+      &:hover
+        background-color: var(--buttonbg-hover)

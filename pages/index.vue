@@ -5,13 +5,24 @@
             <div class="NamesBox">
                 <div class="SameLine">
                     <h1 class="Big">hi there! i'm</h1>
-                    <img
-                        width="30"
-                        height="30"
-                        src="~/assets/svg/anapfp.svg"
-                        class="ProfilePicture"
-                        alt="pfp"
-                    />
+                    <NuxtLink to="https://picrew.me/ja/image_maker/644129">
+                        <img
+                            width="30"
+                            height="30"
+                            src="~/assets/pfp1.png"
+                            class="ProfilePicture First"
+                            alt="https://picrew.me/ja/image_maker/644129"
+                        />
+                    </NuxtLink>
+                    <NuxtLink to="https://picrew.me/ja/image_maker/2307052">
+                        <img
+                            width="30"
+                            height="30"
+                            src="~/assets/pfp2.png"
+                            class="ProfilePicture Second"
+                            alt="https://picrew.me/ja/image_maker/2307052"
+                        />
+                    </NuxtLink>
                     <h1 class="Name">crystal</h1>
                     <h1 class="Big">!</h1>
                 </div>
@@ -20,7 +31,7 @@
                     @mouseover="hover = true"
                     @mouseleave="hover = false"
                 >
-                    i use they/them pronouns btw
+                    i use they/she pronouns!
                     <i> :3</i>
                 </p>
             </div>
@@ -34,10 +45,10 @@
                     <ul class="List">
                         <li>16 years old</li>
                         <li>
-                            <p class="SmallText">aroace</p>
+                            <p class="SmallText">pan / asexual</p>
                         </li>
                         <li>
-                            <p class="SmallText">nonbinary</p>
+                            <p class="SmallText">transfem enby</p>
                         </li>
                         <li>From Thailand 🇹🇭</li>
                         <li>Studying Computer Engineering in Bangkok</li>
@@ -69,6 +80,7 @@
                             Pixel Art
                             <p class="SmallText">(mostly small-sized)</p>
                         </li>
+                        <li>日本語を勉強中！</li>
                     </ul>
                 </div>
                 <div class="SubBox">
@@ -79,12 +91,13 @@
                             Games
                             <p class="SmallText">(mostly Minecraft)</p>
                         </li>
-                        <li>Cosplaying as a Sysadmin</li>
                         <li>High quality Designs</li>
                         <li>
                             Fixing Problems
                             <p class="SmallText">(sometimes)</p>
                         </li>
+                        <li>Learning new things</li>
+                        <li><p class="SmallText">to be a girl</p></li>
                     </ul>
                 </div>
             </div>
@@ -138,6 +151,7 @@
 </template>
 
 <script lang="ts">
+import { _lime } from "#tailwind-config/theme/stroke";
 import "~/assets/css/about.sass";
 export default {
     data() {
@@ -145,5 +159,6 @@ export default {
             hover: false,
         };
     },
+    components: { _lime },
 };
 </script>

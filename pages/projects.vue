@@ -1,74 +1,40 @@
 <template>
-  <MainWindow selectedTab="projects">
-    <div class="ProjectsFrame">
-      <div class="ProjectCard">
-        <h1>google en passant</h1>
-        <p>holy hell</p>
-      </div>
-      <div class="ProjectCard">
-        <h1>new response just dropped</h1>
-        <p>actual zombie</p>
-      </div>
-      <div class="ProjectCard">
-        <h1>Project :3</h1>
-        <p>mrrrp meow mrrrp nyaaa meowwww meow mrrrow nya mew mrrrow mew meowwww mrrrp mew nyaaa :3</p>
-      </div>
-      <div class="ProjectCard">
-        <h1>call the exorcist</h1>
-        <p>Description of Project 4</p>
-      </div>
-      <div class="ProjectCard">
-        <h1>Project 5</h1>
-        <p>Description of Project 5</p>
-      </div>
-      <div class="ProjectCard">
-        <h1>idk</h1>
-        <p>Description of Project 6</p>
-      </div>
-      <div class="ProjectCard">
-        <h1>Project 7</h1>
-        <p>Description of Project 7</p>
-      </div>
-      <div class="ProjectCard">
-        <h1>Project 8</h1>
-        <p>Description of Project 8</p>
-      </div>
-      <div class="ProjectCard">
-        <h1>Project 1</h1>
-        <p>Description of Project 1</p>
-      </div>
-      <div class="ProjectCard">
-        <h1>Project 2</h1>
-        <p>Description of Project 2</p>
-      </div>
-      <div class="ProjectCard">
-        <h1>Project :3</h1>
-        <p>mrrrp nyaaa mrrrp mrrrow nyaaa meow mrrrow meowwww mrrrow mrrrp :3</p>
-      </div>
-      <div class="ProjectCard">
-        <h1>Project 4</h1>
-        <p>Description of Project 4</p>
-      </div>
-      <div class="ProjectCard">
-        <h1>Project 5</h1>
-        <p>Description of Project 5</p>
-      </div>
-      <div class="ProjectCard">
-        <h1>Project 6</h1>
-        <p>Description of Project 6</p>
-      </div>
-      <div class="ProjectCard">
-        <h1>Project 7</h1>
-        <p>Description of Project 7</p>
-      </div>
-      <div class="ProjectCard">
-        <h1>Project 8</h1>
-        <p>Description of Project 8</p>
-      </div>
-    </div>
-  </MainWindow>
+    <MainWindow selectedTab="projects">
+        <div v-if="status === 'pending'">Loading...</div>
+        <div v-else class="ProjectsFrame">
+            <div v-for="post in posts.projects" class="ProjectCard">
+                <NuxtImg
+                    v-if="post.cover"
+                    v-bind:src="post.cover"
+                    v-bind:alt="post.title"
+                />
+                <div class="content">
+                    <h1>{{ post.title }}</h1>
+                    <p>{{ post.description }}</p>
+                </div>
+                <div class="buttons">
+                    <NuxtLink
+                        v-bind:to="link.link"
+                        v-for="link in post.links"
+                        target="_blank"
+                    >
+                        <div>
+                            {{ link.name }}
+                            <img
+                                src="~/assets/svg/external-link-symbolic.svg"
+                            />
+                        </div>
+                    </NuxtLink>
+                </div>
+            </div>
+        </div>
+    </MainWindow>
 </template>
 
-<script>
-import '~/assets/css/projects.sass'
+<script lang="ts">
+import "~/assets/css/projects.sass";
+</script>
+
+<script setup lang="ts">
+const { status, data: posts } = useFetch("/api/projects", { lazy: true });
 </script>

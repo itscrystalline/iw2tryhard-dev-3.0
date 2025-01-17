@@ -8,7 +8,7 @@ export default defineNuxtConfig({
       }
     },
     css: ['~/assets/css/main.sass'],
-    modules: ['@nuxt/ui', '@nuxtjs/color-mode'],
+    modules: ['@nuxt/ui', '@nuxtjs/color-mode', "@nuxt/image"],
     ui: {
         global: true,
     },
