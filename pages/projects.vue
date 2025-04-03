@@ -1,6 +1,7 @@
 <template>
   <MainWindow selectedTab="projects">
     <div v-if="status === 'pending'">Loading...</div>
+    <div v-if="status === 'error'">Error fetching projects. ({{ error }})</div>
     <div v-else class="ProjectsFrame">
       <div v-for="post in posts.projects" class="ProjectCard">
         <NuxtImg v-if="post.cover" v-bind:src="post.cover" v-bind:alt="post.title" />
@@ -26,5 +27,5 @@ import "~/assets/css/projects.sass";
 </script>
 
 <script setup lang="ts">
-const { status, data: posts } = useFetch("/api/projects", { lazy: true });
+const { status, error, data: posts } = useFetch("https://server.iw2tryhard.dev/itscrystalline_projects.json", { lazy: true });
 </script>
