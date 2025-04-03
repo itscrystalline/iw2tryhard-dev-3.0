@@ -16,7 +16,7 @@
           <h1 class="Name">crystal</h1>
           <h1 class="Big">!</h1>
         </div>
-        <p class="Pronouns" @mouseover="hover = true" @mouseleave="hover = false">
+        <p class="Pronouns">
           i use they/she pronouns!
           <i> :3</i>
         </p>
@@ -70,7 +70,7 @@
           </ul>
         </div>
         <div class="SubBox">
-          <p class="SmallTitle">I like</p>
+          <p class="SmallTitle">I{{ hover ? "'d" : "" }} like</p>
           <ul class="List">
             <li>Technology</li>
             <li>
@@ -84,7 +84,14 @@
             </li>
             <li>Learning new things</li>
             <li>
-              <p class="SmallText">to be a girl</p>
+              <p v-bind:class="'SmallText ' + (!hover ? 'transgener' : '')" @mouseover="hover = true"
+                @mouseleave="hover = false">to be a girl 🏳️‍⚧️</p>
+            </li>
+            <li v-bind:style="hover ? '' : 'display: none'">
+              <p class="SmallText">to get hormones one day</p>
+            </li>
+            <li v-bind:style="hover ? '' : 'display: none'">
+              <p class="SmallText">to enjoy life as a woman, one day</p>
             </li>
           </ul>
         </div>
