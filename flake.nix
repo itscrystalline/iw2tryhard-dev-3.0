@@ -83,7 +83,10 @@
       packages.docker = pkgs.dockerTools.buildLayeredImage {
         name = name;
         tag = "latest";
-        contents = [nodejs]; # <--
+        contents = [
+          nodejs
+          pkgs.fakeNss
+        ]; # <--
         config = {
           Cmd = start_script;
           ExposedPorts = {
