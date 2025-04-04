@@ -87,9 +87,6 @@
         contents = [
           nodejs
           pkgs.fakeNss
-          pkgs.bash
-          pkgs.coreutils
-          pkgs.busybox
           pkgs.cacert
         ]; # <--
         config = {
