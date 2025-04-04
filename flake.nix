@@ -56,6 +56,7 @@
 
           cat << 'EOF' > $out/bin/start
           #!${pkgs.stdenv.shell}
+          export NODE_EXTRA_CA_CERTS=${pkgs.cacert}/etc/ssl/certs/ca-certificates.crt
           exec ${nodejs}/bin/node __OUTDIR__/server/index.mjs
           EOF
           sed -i "s|__OUTDIR__|$out|g" $out/bin/start
@@ -89,6 +90,7 @@
           pkgs.bash
           pkgs.coreutils
           pkgs.busybox
+          pkgs.cacert
         ]; # <--
         config = {
           Env = ["PATH=${pkgs.coreutils}/bin/:${pkgs.busybox}/bin/"];
