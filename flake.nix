@@ -88,9 +88,10 @@
           pkgs.fakeNss
           pkgs.bash
           pkgs.coreutils
+          pkgs.busybox
         ]; # <--
         config = {
-          Env = ["PATH=${pkgs.coreutils}/bin/"];
+          Env = ["PATH=${pkgs.coreutils}/bin/:${pkgs.busybox}/bin/"];
           Cmd = start_script;
           ExposedPorts = {
             "${port}/tcp" = {};
