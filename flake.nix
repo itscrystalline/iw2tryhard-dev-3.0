@@ -86,8 +86,11 @@
         contents = [
           nodejs
           pkgs.fakeNss
+          pkgs.bash
+          pkgs.coreutils
         ]; # <--
         config = {
+          Env = ["PATH=${pkgs.coreutils}/bin/"];
           Cmd = start_script;
           ExposedPorts = {
             "${port}/tcp" = {};
