@@ -64,12 +64,20 @@
           runHook postInstall
         '';
       });
+      v2 = pkgs.callPackage ./v2.nix {inherit pkgs stdenv;};
       start_script = "${bin}/bin/start";
+      start_v2_script = "${v2}/start";
     in {
       packages.bin = bin;
+      packages.bin_v2 = v2;
+
       apps.bin = {
         type = "app";
         program = start_script;
+      };
+      apps.bin_v2 = {
+        type = "app";
+        program = start_v2_script;
       };
 
       packages.docker = pkgs.dockerTools.buildLayeredImage {
@@ -78,6 +86,17 @@
         contents = [nodejs]; # <--
         config = {
           Cmd = start_script;
+          ExposedPorts = {
+            "${port}/tcp" = {};
+          };
+        };
+      };
+      packages.docker_v2 = pkgs.dockerTools.buildLayeredImage {
+        name = name;
+        tag = "latest";
+        contents = [nodejs]; # <--
+        config = {
+          Cmd = start_v2_script;
           ExposedPorts = {
             "${port}/tcp" = {};
           };
