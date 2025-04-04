@@ -56,7 +56,7 @@
 
           cat << 'EOF' > $out/bin/start
           #!${pkgs.stdenv.shell}
-          export NODE_EXTRA_CA_CERTS=${pkgs.cacert}/etc/ssl/certs/ca-certificates.crt
+          export NODE_EXTRA_CA_CERTS=${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt
           exec ${nodejs}/bin/node __OUTDIR__/server/index.mjs
           EOF
           sed -i "s|__OUTDIR__|$out|g" $out/bin/start
