@@ -37,7 +37,7 @@
               <p class="SmallText">transfem enby</p>
             </li>
             <li>From Thailand 🇹🇭</li>
-            <li>Studying Computer Engineering in Bangkok</li>
+            <li>Studying Computer Engineering at KOSEN-KMITL</li>
             <li>
               A
               <p class="SmallText">not so hobbyist anymore</p>
