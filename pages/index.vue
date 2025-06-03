@@ -17,7 +17,7 @@
           <h1 class="Big">!</h1>
         </div>
         <p class="Pronouns">
-          i use they/she pronouns!
+          i use she/they pronouns!
           <i> :3</i>
         </p>
       </div>
@@ -29,7 +29,7 @@
         <div class="SubBox">
           <p class="SmallTitle">I am</p>
           <ul class="List">
-            <li>16 years old</li>
+            <li>{{ getAge() }} years old</li>
             <li>
               <p class="SmallText">pan / asexual</p>
             </li>
@@ -126,10 +126,13 @@
 <script lang="ts">
 import { _lime } from "#tailwind-config/theme/stroke";
 import "~/assets/css/about.sass";
+
+
 export default {
   data() {
     return {
       hover: false,
+      getAge: (): number => new Date(Date.now() - 1212550800).getUTCFullYear() - 2008,
     };
   },
   components: { _lime },
