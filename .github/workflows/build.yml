@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 env:
-  REGISTRY: ${{ forgejo.server_url }} 
+  REGISTRY: git.iw2tryhard.dev 
   IMAGE_NAME: ${{ forgejo.repository }}
 
 jobs:
