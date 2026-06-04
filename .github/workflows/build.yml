@@ -13,7 +13,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest-arm 
+    runs-on: native
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -24,26 +24,6 @@ jobs:
           registry: ${{ env.REGISTRY }}
           username: itscrystalline 
           password: ${{ secrets.TOKEN }}
- 
-      - name: Set up post build hook
-        run: |
-          cat > /tmp/post-build-hook.sh << EOF
-          set -euf
-          if [ -n "$OUT_PATHS" ]; then
-            echo "Uploading paths" $OUT_PATHS
-            NIX_SSHOPTS="-o StrictHostKeyChecking=no" nix copy --to "ssh://nixremote@mingzhu" $OUT_PATHS
-          fi
-          EOF
-          chmod +x /tmp/post-build-hook.sh
-      - name: Install Nix
-        uses: cachix/install-nix-action@v30
-        with:
-          nix_path: nixpkgs=channel:nixos-26.05
-          extra_nix_config: |
-            extra-substituters = http://cache.crys
-            extra-trusted-public-keys = mingzhu:V0KsUipFnrBNsfUD8VI0rFXQpgE3KKJfRby9Jm8cLTQ=
-            fallback = true
-            post-build-hook = /tmp/post-build-hook.sh
 
       - name: Build
         run: nix build .\#docker -L 2>&1
@@ -53,7 +33,7 @@ jobs:
           TAGS: ${{ steps.meta.outputs.tags }}
           LABELS: ${{ steps.meta.outputs.labels }}
         run: |
-          result | docker image load
+          ./result | docker image load
           docker tag iw2tryhard-dev:latest $REGISTRY/$IMAGE_NAME:latest
           docker push $REGISTRY/$IMAGE_NAME:latest
 
