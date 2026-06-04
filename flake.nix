@@ -4,19 +4,18 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
   outputs = {
-    self,
     nixpkgs,
     flake-utils,
+    ...
   }:
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = import nixpkgs {
         inherit system;
       };
-      # lib = pkgs.lib;
-      stdenv = pkgs.stdenv;
+      inherit (pkgs) stdenv pnpmConfigHook;
       wrapper = pkgs.makeWrapper;
-      nodejs = pkgs.nodejs_20;
-      pnpm = pkgs.pnpm_9;
+      nodejs = pkgs.nodejs_22;
+      pnpm = pkgs.pnpm_11;
 
       name = "iw2tryhard-dev";
       port = "3000";
@@ -28,14 +27,17 @@
 
         buildInputs = [nodejs];
         nativeBuildInputs = [
+          pnpm
           nodejs
-          pnpm.configHook
+          pnpmConfigHook
           wrapper
         ];
 
-        pnpmDeps = pnpm.fetchDeps {
+        pnpmDeps = pkgs.fetchPnpmDeps {
           inherit (finalAttrs) pname version src;
-          hash = "sha256-pYBO63bEiIgPu57L0/tZ79EPvFW7soOEe1dcO/m2WNA=";
+          inherit pnpm;
+          fetcherVersion = 4;
+          hash = "sha256-ajgPQhPHiK+88qL36biggzST3VZUvqfXFDfvZ5HEoCs=";
         };
 
         buildPhase = ''
@@ -69,8 +71,38 @@
       start_script = "${bin}/bin/start";
       start_v2_script = "${v2}/start";
     in {
-      packages.bin = bin;
-      packages.bin_v2 = v2;
+      packages = {
+        inherit bin;
+        bin_v2 = v2;
+
+        docker = pkgs.dockerTools.buildLayeredImage {
+          inherit name;
+          tag = "latest";
+          contents = [
+            nodejs
+            pkgs.fakeNss
+            pkgs.cacert
+          ]; # <--
+          config = {
+            Env = ["PATH=${pkgs.coreutils}/bin/:${pkgs.busybox}/bin/"];
+            Cmd = [start_script];
+            ExposedPorts = {
+              "${port}/tcp" = {};
+            };
+          };
+        };
+        docker_v2 = pkgs.dockerTools.buildLayeredImage {
+          inherit name;
+          tag = "latest";
+          contents = [nodejs]; # <--
+          config = {
+            Cmd = [start_v2_script];
+            ExposedPorts = {
+              "${port}/tcp" = {};
+            };
+          };
+        };
+      };
 
       apps.bin = {
         type = "app";
@@ -79,34 +111,6 @@
       apps.bin_v2 = {
         type = "app";
         program = start_v2_script;
-      };
-
-      packages.docker = pkgs.dockerTools.buildLayeredImage {
-        name = name;
-        tag = "latest";
-        contents = [
-          nodejs
-          pkgs.fakeNss
-          pkgs.cacert
-        ]; # <--
-        config = {
-          Env = ["PATH=${pkgs.coreutils}/bin/:${pkgs.busybox}/bin/"];
-          Cmd = start_script;
-          ExposedPorts = {
-            "${port}/tcp" = {};
-          };
-        };
-      };
-      packages.docker_v2 = pkgs.dockerTools.buildLayeredImage {
-        name = name;
-        tag = "latest";
-        contents = [nodejs]; # <--
-        config = {
-          Cmd = start_v2_script;
-          ExposedPorts = {
-            "${port}/tcp" = {};
-          };
-        };
       };
     });
 }

@@ -10,16 +10,16 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "@nuxt/image": "^1.8.1",
-    "@nuxtjs/color-mode": "^3.4.0",
-    "@types/node": "^18.17.3",
+    "@nuxt/image": "^1.11.0",
+    "@nuxtjs/color-mode": "^3.5.2",
+    "@types/node": "^18.19.130",
     "nuxt": "^4.4.7"
   },
   "dependencies": {
     "@csstools/cascade-layer-name-parser": "^3.0.0",
-    "@nuxt/ui": "^2.10.0",
-    "eslint": "^9.16.0",
-    "sass": "^1.64.2",
-    "typescript": "^5.8.2"
+    "@nuxt/ui": "^2.22.3",
+    "eslint": "^9.39.4",
+    "sass": "^1.100.0",
+    "typescript": "^5.9.3"
   }
 }

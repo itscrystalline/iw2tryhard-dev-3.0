@@ -1,10 +1,6 @@
-{ pkgs, lib, config, inputs, ... }:
-
-{
-  cachix.enable = false;
-
+{pkgs, ...}: {
   # https://devenv.sh/packages/
-  packages = [ pkgs.git ];
+  packages = [pkgs.git];
 
   languages.javascript = {
     enable = true;

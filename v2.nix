@@ -2,13 +2,8 @@
   stdenv,
   pkgs,
 }: let
-  fetchFromGitHub = pkgs.fetchFromGitHub;
-  fetchYarnDeps = pkgs.fetchYarnDeps;
-  yarnConfigHook = pkgs.yarnConfigHook;
-  yarnBuildHook = pkgs.yarnBuildHook;
-  yarnInstallHook = pkgs.yarnInstallHook;
-
-  nodejs = pkgs.nodejs_18;
+  inherit (pkgs) fetchFromGitHub fetchYarnDeps yarnConfigHook yarnBuildHook yarnInstallHook;
+  nodejs = pkgs.nodejs_22;
 in
   stdenv.mkDerivation (finalAttrs: rec {
     pname = "iw2tryhard-dev-v2";

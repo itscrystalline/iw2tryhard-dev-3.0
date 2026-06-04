@@ -12,29 +12,29 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0(@csstools/css-parser-algorithms@4.0.0(@csstools/css-tokenizer@4.0.0))(@csstools/css-tokenizer@4.0.0)
       '@nuxt/ui':
-        specifier: ^2.10.0
+        specifier: ^2.22.3
         version: 2.22.3(magicast@0.5.3)(valibot@1.4.1(typescript@5.9.3))(vite@7.3.5(@types/node@18.19.130)(jiti@1.21.7)(sass@1.100.0)(terser@5.48.0)(yaml@2.9.0))(vue@3.5.35(typescript@5.9.3))(yaml@2.9.0)
       eslint:
-        specifier: ^9.16.0
+        specifier: ^9.39.4
         version: 9.39.4(jiti@1.21.7)
       sass:
-        specifier: ^1.64.2
+        specifier: ^1.100.0
         version: 1.100.0
       typescript:
-        specifier: ^5.8.2
+        specifier: ^5.9.3
         version: 5.9.3
     devDependencies:
       '@nuxt/devtools':
         specifier: latest
         version: 4.0.0-alpha.7(crossws@0.4.5(srvx@0.11.16))(db0@0.3.4)(ioredis@5.11.1)(typescript@5.9.3)(vite@7.3.5(@types/node@18.19.130)(jiti@1.21.7)(sass@1.100.0)(terser@5.48.0)(yaml@2.9.0))(vue@3.5.35(typescript@5.9.3))
       '@nuxt/image':
-        specifier: ^1.8.1
+        specifier: ^1.11.0
         version: 1.11.0(db0@0.3.4)(ioredis@5.11.1)(magicast@0.5.3)(srvx@0.11.16)
       '@nuxtjs/color-mode':
-        specifier: ^3.4.0
+        specifier: ^3.5.2
         version: 3.5.2(magicast@0.5.3)
       '@types/node':
-        specifier: ^18.17.3
+        specifier: ^18.19.130
         version: 18.19.130
       nuxt:
         specifier: ^4.4.7
