@@ -13,7 +13,7 @@ env:
 
 jobs:
   build:
-    runs-on: native
+    runs-on: ubuntu-latest-arm 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -24,17 +24,37 @@ jobs:
           registry: ${{ env.REGISTRY }}
           username: itscrystalline 
           password: ${{ secrets.TOKEN }}
-
-      - name: Extract metadata (tags, labels) for Docker
-        id: meta
-        uses: docker/metadata-action@v4
+ 
+      - name: Set up post build hook
+        run: |
+          cat > /tmp/post-build-hook.sh << EOF
+          set -euf
+          if [ -n "$OUT_PATHS" ]; then
+            echo "Uploading paths" $OUT_PATHS
+            NIX_SSHOPTS="-o StrictHostKeyChecking=no" nix copy --to "ssh://nixremote@mingzhu" $OUT_PATHS
+          fi
+          EOF
+          chmod +x /tmp/post-build-hook.sh
+      - name: Install Nix
+        uses: cachix/install-nix-action@v30
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          nix_path: nixpkgs=channel:nixos-26.05
+          extra_nix_config: |
+            extra-substituters = http://cache.crys
+            extra-trusted-public-keys = mingzhu:V0KsUipFnrBNsfUD8VI0rFXQpgE3KKJfRby9Jm8cLTQ=
+            fallback = true
+            post-build-hook = /tmp/post-build-hook.sh
 
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v7
-        with:
-          context: .
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+      - name: Build
+        run: nix build .\#docker -L 2>&1
+
+      - name: Load and tag image
+        env:
+          TAGS: ${{ steps.meta.outputs.tags }}
+          LABELS: ${{ steps.meta.outputs.labels }}
+        run: |
+          result | docker image load
+          docker tag iw2tryhard-dev:latest $REGISTRY/$IMAGE_NAME:latest
+          docker push $REGISTRY/$IMAGE_NAME:latest
+
+

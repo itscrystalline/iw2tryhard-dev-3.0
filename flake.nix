@@ -75,7 +75,7 @@
         inherit bin;
         bin_v2 = v2;
 
-        docker = pkgs.dockerTools.buildLayeredImage {
+        docker = pkgs.dockerTools.streamLayeredImage {
           inherit name;
           tag = "latest";
           contents = [
@@ -91,8 +91,8 @@
             };
           };
         };
-        docker_v2 = pkgs.dockerTools.buildLayeredImage {
-          inherit name;
+        docker_v2 = pkgs.dockerTools.streamLayeredImage {
+          name = "thaddev.com-2.0";
           tag = "latest";
           contents = [nodejs]; # <--
           config = {
