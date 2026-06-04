@@ -65,23 +65,23 @@
 
 <script lang="ts">
 export default {
-  props: ["selectedTab", "noFlex"],
-  methods: {
-    getClass(name: String, bottom: Boolean): Object {
-      return {
-        Tab: name != this.selectedTab && !bottom,
-        "Tab Selected": name == this.selectedTab && !bottom,
-        BottomTab: name != this.selectedTab && bottom,
-        "BottomTab Selected": name == this.selectedTab && bottom,
-      };
-    },
-    getFlex(): Object {
-      return {
-        Main: this.noFlex == null,
-        "Main NoFlex": this.noFlex != null,
-      };
-    },
-  },
+	props: ["selectedTab", "noFlex"],
+	methods: {
+		getClass(name: string, bottom: boolean): Object {
+			return {
+				Tab: name != this.selectedTab && !bottom,
+				"Tab Selected": name == this.selectedTab && !bottom,
+				BottomTab: name != this.selectedTab && bottom,
+				"BottomTab Selected": name == this.selectedTab && bottom,
+			};
+		},
+		getFlex(): Object {
+			return {
+				Main: this.noFlex == null,
+				"Main NoFlex": this.noFlex != null,
+			};
+		},
+	},
 };
 </script>
 

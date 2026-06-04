@@ -31,10 +31,10 @@
           <ul class="List">
             <li>{{ getAge() }} years old</li>
             <li>
-              <p class="SmallText">pan / asexual</p>
+              <p>pan / asexual</p>
             </li>
             <li>
-              <p class="SmallText">transfem enby</p>
+              <b>transfem enby</b>
             </li>
             <li>From Thailand 🇹🇭</li>
             <li>Studying Computer Engineering at KOSEN-KMITL</li>
@@ -66,11 +66,11 @@
               Pixel Art
               <p class="SmallText">(mostly small-sized)</p>
             </li>
-            <li>日本語を勉強中！</li>
+            <li>日本語復習中！</li>
           </ul>
         </div>
         <div class="SubBox">
-          <p class="SmallTitle">I{{ hover ? "'d" : "" }} like</p>
+          <p class="SmallTitle">I like</p>
           <ul class="List">
             <li>Technology</li>
             <li>
@@ -85,13 +85,7 @@
             <li>Learning new things</li>
             <li>
               <p v-bind:class="'SmallText ' + (!hover ? 'transgener' : '')" @mouseover="hover = true"
-                @mouseleave="hover = false">to be a girl 🏳️‍⚧️</p>
-            </li>
-            <li v-bind:style="hover ? '' : 'display: none'">
-              <p class="SmallText">to get hormones one day</p>
-            </li>
-            <li v-bind:style="hover ? '' : 'display: none'">
-              <p class="SmallText">to enjoy life as a woman, one day</p>
+                @mouseleave="hover = false">mmmm estrogen 🏳️‍⚧️ ! ! !</p>
             </li>
           </ul>
         </div>
@@ -105,6 +99,9 @@
         </div>
         <div class="SubBox">
           <NuxtLink class="Link" to="https://github.com/itscrystalline/">Github</NuxtLink>
+        </div>
+        <div class="SubBox">
+          <NuxtLink class="Link" to="https://git.iw2tryhard.dev/itscrystalline/">Forgejo</NuxtLink>
         </div>
         <div class="SubBox">
           <NuxtLink class="Link" to="mailto:real@iw2tryhard.dev">Email</NuxtLink>
@@ -127,14 +124,14 @@
 import { _lime } from "#tailwind-config/theme/stroke";
 import "~/assets/css/about.sass";
 
-
 export default {
-  data() {
-    return {
-      hover: false,
-      getAge: (): number => new Date(Date.now() - 1212550800).getUTCFullYear() - 2008,
-    };
-  },
-  components: { _lime },
+	data() {
+		return {
+			hover: false,
+			getAge: (): number =>
+				new Date(Date.now() - 1212550800).getUTCFullYear() - 2008,
+		};
+	},
+	components: { _lime },
 };
 </script>

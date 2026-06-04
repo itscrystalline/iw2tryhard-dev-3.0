@@ -13,9 +13,10 @@
     "@nuxt/image": "^1.8.1",
     "@nuxtjs/color-mode": "^3.4.0",
     "@types/node": "^18.17.3",
-    "nuxt": "^3.11.2"
+    "nuxt": "^4.4.7"
   },
   "dependencies": {
+    "@csstools/cascade-layer-name-parser": "^3.0.0",
     "@nuxt/ui": "^2.10.0",
     "eslint": "^9.16.0",
     "sass": "^1.64.2",

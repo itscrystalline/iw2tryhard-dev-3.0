@@ -30,5 +30,5 @@ import "~/assets/css/projects.sass";
 </script>
 
 <script setup lang="ts">
-const { status, error, data: posts } = useFetch("/api/projects", { lazy: true });
+const { status, error, data: posts } = useFetch("https://static.iw2tryhard.dev/public/projects.json", { lazy: true });
 </script>
