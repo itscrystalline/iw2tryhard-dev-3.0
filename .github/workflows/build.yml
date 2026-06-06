@@ -3,6 +3,10 @@ name: Build and publish Site image
 on:
   push:
     branches: [ main ]
+    paths-ignore:
+      - .github/**/*
+      - devenv*
+      - README.md
   workflow_dispatch:
 
 env:
