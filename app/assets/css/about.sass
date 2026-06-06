@@ -58,6 +58,10 @@
     justify-content: center
     align-items: center
 
+    &.UnlessSmall
+      @media (max-width: $breakpoint-mobile)
+        flex-direction: column
+
 .Subnames
     color: var(--caption)
     text-align: center
