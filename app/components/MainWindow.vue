@@ -16,14 +16,6 @@
           <img src="~/assets/svg/build-alt-symbolic.svg" />
           <p>Projects</p>
         </NuxtLink>
-        <NuxtLink v-bind:class="getClass('stats', false)" to="/statistics">
-          <img src="~/assets/svg/align-tool-symbolic.svg" />
-          <p>Statistics</p>
-        </NuxtLink>
-        <NuxtLink v-bind:class="getClass('gallery', false)" to="/gallery">
-          <img src="~/assets/svg/image-round-symbolic.svg" />
-          <p>Gallery</p>
-        </NuxtLink>
         <NuxtLink v-bind:class="getClass('blog', false)" to="/blog">
           <img src="~/assets/svg/chat-bubble-text-inverted-symbolic.svg" />
           <p>Blog</p>
@@ -46,14 +38,6 @@
           <img src="~/assets/svg/build-alt-symbolic.svg" />
           <p>Projects</p>
         </NuxtLink>
-        <NuxtLink v-bind:class="getClass('stats', true)" to="/statistics">
-          <img src="~/assets/svg/align-tool-symbolic.svg" />
-          <p>Statistics</p>
-        </NuxtLink>
-        <NuxtLink v-bind:class="getClass('gallery', true)" to="/gallery">
-          <img src="~/assets/svg/image-round-symbolic.svg" />
-          <p>Gallery</p>
-        </NuxtLink>
         <NuxtLink v-bind:class="getClass('blog', true)" to="/blog">
           <img src="~/assets/svg/chat-bubble-text-inverted-symbolic.svg" />
           <p>Blog</p>
@@ -69,10 +53,10 @@ export default {
 	methods: {
 		getClass(name: string, bottom: boolean): Object {
 			return {
-				Tab: name != this.selectedTab && !bottom,
-				"Tab Selected": name == this.selectedTab && !bottom,
-				BottomTab: name != this.selectedTab && bottom,
-				"BottomTab Selected": name == this.selectedTab && bottom,
+				Tab: name !== this.selectedTab && !bottom,
+				"Tab Selected": name === this.selectedTab && !bottom,
+				BottomTab: name !== this.selectedTab && bottom,
+				"BottomTab Selected": name === this.selectedTab && bottom,
 			};
 		},
 		getFlex(): Object {
