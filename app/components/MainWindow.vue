@@ -29,8 +29,8 @@
           <p>Blog</p>
         </NuxtLink>
       </div>
-      <NuxtLink class="LogoButton End" to="https://github.com/MyNameTsThad/iw2tryhard-dev-3.0">
-        <img src="~/assets/svg/github-desktop-symbolic.svg" class="ThinIcon" alt="github" />
+      <NuxtLink class="LogoButton End" to="https://git.iw2tryhard.dev/itscrystalline/iw2tryhard-dev-3.0">
+        <img src="~/assets/svg/git-symbolic.svg" class="ThinIcon" alt="github" />
       </NuxtLink>
     </div>
     <div v-bind:class="getFlex()">
