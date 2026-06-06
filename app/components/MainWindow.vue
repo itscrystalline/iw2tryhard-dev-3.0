@@ -21,8 +21,11 @@
           <p>Blog</p>
         </NuxtLink>
       </div>
-      <NuxtLink class="LogoButton End" to="https://github.com/MyNameTsThad/iw2tryhard-dev-3.0">
-        <img src="~/assets/svg/github-desktop-symbolic.svg" class="ThinIcon" alt="github" />
+      <NuxtLink href="https://badge.les.bi" class="Flag End">
+        <img title="trans lesbi" style="image-rendering: pixelated;" src="https://badge.les.bi/88x31/trans/lesbi/45-degree/outset.svg">
+      </NuxtLink>
+      <NuxtLink class="LogoButton End" to="https://git.iw2tryhard.dev/itscrystalline/iw2tryhard-dev-3.0">
+        <img src="~/assets/svg/git-symbolic.svg" class="ThinIcon" alt="github" />
       </NuxtLink>
     </div>
     <div v-bind:class="getFlex()">
