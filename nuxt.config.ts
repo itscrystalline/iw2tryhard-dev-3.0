@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     },
   },
   css: ["~/assets/css/main.sass"],
-  modules: ["@nuxt/ui", "@nuxtjs/color-mode", "@nuxt/image"],
+  modules: ["@nuxt/ui", "@nuxtjs/color-mode"],
   ui: {
     global: true,
   },
@@ -42,8 +42,4 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: "",
   },
-  image: {
-    domains: ["picrew.me", "88x31.kate.pet", "88x31imgs.blob.core.windows.net"],
-  },
 });
-

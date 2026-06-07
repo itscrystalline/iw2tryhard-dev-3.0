@@ -118,31 +118,31 @@
       </div>
       <div class="AboutBox End">
         <NuxtLink href="https://alyx.sh/posts/hrt-geocities-buttons/" class="SubBox">
-          <NuxtImg src="https://88x31.kate.pet/hrt-e2.gif" height="31" class="Badge8831" loading="lazy" />
+          <img src="https://88x31.kate.pet/hrt-e2.gif" height="31" class="Badge8831" loading="lazy" />
         </NuxtLink>
         <div class="SubBox">
-          <NuxtImg src="https://88x31imgs.blob.core.windows.net/images/RodeoDrive_Plaza_thaidev.gif" height="31" class="Badge8831" loading="lazy"/>
+          <img src="https://88x31imgs.blob.core.windows.net/images/RodeoDrive_Plaza_thaidev.gif" height="31" class="Badge8831" loading="lazy"/>
         </div>
         <div class="SubBox">
-          <NuxtImg src="https://88x31.kate.pet/home-assistant.gif" height="31" class="Badge8831" loading="lazy"/>
+          <img src="https://88x31.kate.pet/home-assistant.gif" height="31" class="Badge8831" loading="lazy"/>
         </div>
         <div class="SubBox">
-          <NuxtImg src="https://88x31.kate.pet/transrats.gif" height="31" class="Badge8831" loading="lazy"/>
+          <img src="https://88x31.kate.pet/transrats.gif" height="31" class="Badge8831" loading="lazy"/>
         </div>
         <div class="SubBox">
-          <NuxtImg src="https://88x31.kate.pet/twomen_88x31.gif" height="31" class="Badge8831" loading="lazy"/>
+          <img src="https://88x31.kate.pet/twomen_88x31.gif" height="31" class="Badge8831" loading="lazy"/>
         </div>
         <div class="SubBox">
-          <NuxtImg src="https://88x31.kate.pet/girlsnow.png" height="31" class="Badge8831" loading="lazy"/>
+          <img src="https://88x31.kate.pet/girlsnow.png" height="31" class="Badge8831" loading="lazy"/>
         </div>
         <div class="SubBox">
-          <NuxtImg src="https://88x31.kate.pet/madeon_linux.gif" height="31" class="Badge8831" loading="lazy"/>
+          <img src="https://88x31.kate.pet/madeon_linux.gif" height="31" class="Badge8831" loading="lazy"/>
         </div>
         <div class="SubBox">
-          <NuxtImg src="https://88x31imgs.blob.core.windows.net/images/neovim.gif" height="31" class="Badge8831" loading="lazy"/>
+          <img src="https://88x31imgs.blob.core.windows.net/images/neovim.gif" height="31" class="Badge8831" loading="lazy"/>
         </div>
         <div class="SubBox">
-          <NuxtImg src="/8831.png" height="31" class="Badge8831" loading="lazy"/>
+          <img src="/8831.png" height="31" class="Badge8831" loading="lazy"/>
         </div>
       </div>
     </div>

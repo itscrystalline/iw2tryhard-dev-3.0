@@ -16,7 +16,7 @@
           <NuxtLink v-bind:to="link" v-for="link in post.links" target="_blank">
             <div>
               {{ link.name }}
-              <NuxtImg src="~/assets/svg/external-link-symbolic.svg" />
+              <img src="~/assets/svg/external-link-symbolic.svg" />
             </div>
           </NuxtLink>
         </div>
