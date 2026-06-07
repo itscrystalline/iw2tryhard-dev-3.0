@@ -14,7 +14,7 @@
       };
       inherit (pkgs) stdenv pnpmConfigHook;
       wrapper = pkgs.makeWrapper;
-      nodejs = pkgs.nodejs_22;
+      nodejs = pkgs.nodejs-slim_22;
       pnpm = pkgs.pnpm_11;
 
       name = "iw2tryhard-dev";
@@ -25,7 +25,6 @@
 
         src = ./.;
 
-        buildInputs = [nodejs];
         nativeBuildInputs = [
           pnpm
           nodejs
@@ -79,12 +78,10 @@
           inherit name;
           tag = "latest";
           contents = [
-            nodejs
             pkgs.fakeNss
             pkgs.cacert
           ]; # <--
           config = {
-            Env = ["PATH=${pkgs.coreutils}/bin/:${pkgs.busybox}/bin/"];
             Cmd = [start_script];
             ExposedPorts = {
               "${port}/tcp" = {};
@@ -94,7 +91,6 @@
         docker_v2 = pkgs.dockerTools.streamLayeredImage {
           name = "thaddev.com-2.0";
           tag = "latest";
-          contents = [nodejs]; # <--
           config = {
             Cmd = [start_v2_script];
             ExposedPorts = {
