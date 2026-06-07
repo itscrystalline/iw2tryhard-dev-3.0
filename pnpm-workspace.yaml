@@ -2,4 +2,12 @@ allowBuilds:
   '@parcel/watcher': true
   esbuild: true
   sharp: true
+supportedArchitectures:
+  os:
+    - current
+    - linux
+  cpu:
+    - current
+    - x64
+    - arm64
 minimumReleaseAge: 0
