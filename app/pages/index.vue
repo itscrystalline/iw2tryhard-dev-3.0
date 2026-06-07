@@ -7,11 +7,11 @@
           <h1 class="Big SameLine">hi there! i'm</h1>
           <div class="SameLine">
             <NuxtLink to="https://picrew.me/ja/image_maker/644129">
-              <NuxtImg width="30" height="30" src="/pfp1.png" class="ProfilePicture First"
+              <img width="30" height="30" src="/pfp1-small.webp" class="ProfilePicture First"
                 alt="https://picrew.me/ja/image_maker/644129" />
             </NuxtLink>
             <NuxtLink to="https://picrew.me/ja/image_maker/2307052">
-              <NuxtImg width="30" height="30" src="/pfp2.png" class="ProfilePicture Second"
+              <img width="30" height="30" src="/pfp2-small.webp" class="ProfilePicture Second"
                 alt="https://picrew.me/ja/image_maker/2307052" />
             </NuxtLink>
             <h1 class="Name">crystal</h1>
