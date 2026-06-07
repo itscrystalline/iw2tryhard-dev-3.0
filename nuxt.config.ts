@@ -1,35 +1,49 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    devtools: {
-      enabled: true,
+  devtools: {
+    enabled: true,
 
-      timeline: {
-        enabled: true
-      }
+    timeline: {
+      enabled: true,
     },
-    css: ['~/assets/css/main.sass'],
-    modules: ['@nuxt/ui', '@nuxtjs/color-mode', "@nuxt/image"],
-    ui: {
-        global: true,
+  },
+  css: ["~/assets/css/main.sass"],
+  modules: ["@nuxt/ui", "@nuxtjs/color-mode", "@nuxt/image"],
+  ui: {
+    global: true,
+  },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        sass: {
+          additionalData: '@use "@/assets/_vars.sass" as *\n',
+        },
+      },
     },
-    vite: {
-        css: {
-            preprocessorOptions: {
-                sass: {
-                    additionalData: '@use "@/assets/_vars.sass" as *\n'
-                }
-            }
-        }
+  },
+  app: {
+    head: {
+      link: [
+        {
+          rel: "icon",
+          type: "image/png",
+          href: "/logoshort-16x16.png",
+          sizes: "16x16",
+        },
+        {
+          rel: "icon",
+          type: "image/png",
+          href: "/logoshort-32x32.png",
+          sizes: "32x32",
+        },
+      ],
     },
-    app: {
-        head: {
-            link: [
-                {rel: 'icon', type: 'image/png', href: '/logoshort-16x16.png', sizes: '16x16'},
-                {rel: 'icon', type: 'image/png', href: '/logoshort-32x32.png', sizes: '32x32'},
-            ]
-        }
-    },
-    colorMode: {
-        classSuffix: ''
-    }
-})
+  },
+  colorMode: {
+    classSuffix: "",
+  },
+  image: {
+    domains: ["picrew.me", "88x31.kate.pet", "88x31imgs.blob.core.windows.net"],
+  },
+});
+

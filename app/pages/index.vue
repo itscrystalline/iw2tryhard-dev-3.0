@@ -123,7 +123,6 @@
 </template>
 
 <script lang="ts">
-import { _lime } from "#tailwind-config/theme/stroke";
 import "~/assets/css/about.sass";
 
 export default {
@@ -134,6 +133,5 @@ export default {
 				new Date(Date.now() - 1212550800).getUTCFullYear() - 2008,
 		};
 	},
-	components: { _lime },
 };
 </script>
