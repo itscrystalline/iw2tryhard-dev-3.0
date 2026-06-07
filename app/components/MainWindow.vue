@@ -28,7 +28,7 @@
         <img src="~/assets/svg/git-symbolic.svg" class="ThinIcon" alt="github" />
       </NuxtLink>
     </div>
-    <div v-bind:class="getFlex()">
+    <div class="Main">
       <slot />
     </div>
     <div class="BottomBar">
@@ -52,7 +52,7 @@
 
 <script lang="ts">
 export default {
-	props: ["selectedTab", "noFlex"],
+	props: ["selectedTab"],
 	methods: {
 		getClass(name: string, bottom: boolean): Object {
 			return {
@@ -60,12 +60,6 @@ export default {
 				"Tab Selected": name === this.selectedTab && !bottom,
 				BottomTab: name !== this.selectedTab && bottom,
 				"BottomTab Selected": name === this.selectedTab && bottom,
-			};
-		},
-		getFlex(): Object {
-			return {
-				Main: this.noFlex == null,
-				"Main NoFlex": this.noFlex != null,
 			};
 		},
 	},

@@ -7,11 +7,11 @@
           <h1 class="Big SameLine">hi there! i'm</h1>
           <div class="SameLine">
             <NuxtLink to="https://picrew.me/ja/image_maker/644129">
-              <img width="30" height="30" src="~/assets/pfp1.png" class="ProfilePicture First"
+              <NuxtImg width="30" height="30" src="/pfp1.png" class="ProfilePicture First"
                 alt="https://picrew.me/ja/image_maker/644129" />
             </NuxtLink>
             <NuxtLink to="https://picrew.me/ja/image_maker/2307052">
-              <img width="30" height="30" src="~/assets/pfp2.png" class="ProfilePicture Second"
+              <NuxtImg width="30" height="30" src="/pfp2.png" class="ProfilePicture Second"
                 alt="https://picrew.me/ja/image_maker/2307052" />
             </NuxtLink>
             <h1 class="Name">crystal</h1>
@@ -92,10 +92,8 @@
           </ul>
         </div>
       </div>
-      <p class="SmallTitle">
-        my socials (not much of a poster though :p)
-      </p>
-      <div class="AboutBox End">
+      <p class="SmallTitle"> my socials </p>
+      <div class="AboutBox">
         <div class="SubBox">
           <NuxtLink class="Link" to="https://discord.com/users/600496278857842698/">Discord</NuxtLink>
         </div>
@@ -118,12 +116,40 @@
           <NuxtLink class="Link" to="https://www.reddit.com/user/Main-Information-489/">Reddit</NuxtLink>
         </div>
       </div>
+      <div class="AboutBox End">
+        <NuxtLink href="https://alyx.sh/posts/hrt-geocities-buttons/" class="SubBox">
+          <NuxtImg src="https://88x31.kate.pet/hrt-e2.gif" height="31" class="Badge8831" loading="lazy" />
+        </NuxtLink>
+        <div class="SubBox">
+          <NuxtImg src="https://88x31imgs.blob.core.windows.net/images/RodeoDrive_Plaza_thaidev.gif" height="31" class="Badge8831" loading="lazy"/>
+        </div>
+        <div class="SubBox">
+          <NuxtImg src="https://88x31.kate.pet/home-assistant.gif" height="31" class="Badge8831" loading="lazy"/>
+        </div>
+        <div class="SubBox">
+          <NuxtImg src="https://88x31.kate.pet/transrats.gif" height="31" class="Badge8831" loading="lazy"/>
+        </div>
+        <div class="SubBox">
+          <NuxtImg src="https://88x31.kate.pet/twomen_88x31.gif" height="31" class="Badge8831" loading="lazy"/>
+        </div>
+        <div class="SubBox">
+          <NuxtImg src="https://88x31.kate.pet/girlsnow.png" height="31" class="Badge8831" loading="lazy"/>
+        </div>
+        <div class="SubBox">
+          <NuxtImg src="https://88x31.kate.pet/madeon_linux.gif" height="31" class="Badge8831" loading="lazy"/>
+        </div>
+        <div class="SubBox">
+          <NuxtImg src="https://88x31imgs.blob.core.windows.net/images/neovim.gif" height="31" class="Badge8831" loading="lazy"/>
+        </div>
+        <div class="SubBox">
+          <NuxtImg src="/8831.png" height="31" class="Badge8831" loading="lazy"/>
+        </div>
+      </div>
     </div>
   </MainWindow>
 </template>
 
 <script lang="ts">
-import { _lime } from "#tailwind-config/theme/stroke";
 import "~/assets/css/about.sass";
 
 export default {
@@ -134,6 +160,5 @@ export default {
 				new Date(Date.now() - 1212550800).getUTCFullYear() - 2008,
 		};
 	},
-	components: { _lime },
 };
 </script>
