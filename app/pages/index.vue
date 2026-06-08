@@ -41,9 +41,7 @@
             <li>From Thailand 🇹🇭</li>
             <li>Studying Computer Engineering at KOSEN-KMITL</li>
             <li>
-              A
-              <p class="SmallText">not so hobbyist anymore</p>
-              Programmer
+              A Programmer
             </li>
             <li>A Design Enthusiast (UI/UX)</li>
           </ul>
@@ -52,6 +50,7 @@
           <p class="SmallTitle">I do</p>
           <ul class="List">
             <li>Full-Stack Programming</li>
+            <li>Low Level Programming (w/ C, Rust, Zig, etc.)</li>
             <li>
               <p class="SmallText"><i>some</i></p>
               AI
@@ -60,13 +59,11 @@
               <p class="SmallText"><i>some</i></p>
               Graphic Design
             </li>
-            <li>Game Programming</li>
-            <li>Game Design</li>
+            <li>Game Design and Programming</li>
             <li>Game Modding</li>
             <li>
               <p class="SmallText"><i>some</i></p>
               Pixel Art
-              <p class="SmallText">(mostly small-sized)</p>
             </li>
             <li>日本語復習中！</li>
           </ul>
@@ -92,7 +89,7 @@
           </ul>
         </div>
       </div>
-      <p class="SmallTitle"> my socials </p>
+      <p class="SmallTitle">my socials</p>
       <div class="AboutBox">
         <div class="SubBox">
           <NuxtLink class="Link" to="https://discord.com/users/600496278857842698/">Discord</NuxtLink>
@@ -150,7 +147,7 @@
 </template>
 
 <script lang="ts">
-import "~/assets/css/about.sass";
+import "~/assets/css/about.scss";
 
 export default {
 	data() {

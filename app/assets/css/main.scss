@@ -1,0 +1,330 @@
+@font-face {
+  font-family: InterVariable;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/InterVariable.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: InterVariable;
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/InterVariable-Italic.woff2") format("woff2");
+}
+
+@keyframes gradient-scroll {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  50% {
+    background-position: 100% 0%;
+  }
+
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+@keyframes gradient-scroll-fast {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  50% {
+    background-position: 50% 0%;
+  }
+
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+html {
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  animation: gradient-scroll 30s linear infinite;
+  width: 100%;
+  height: 100%;
+  color: var(--fg);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  background-image: linear-gradient(
+    -90deg,
+    var(--gradient-blur-start),
+    var(--gradient-blur-end),
+    var(--bg),
+    var(--gradient-blur-end),
+    var(--gradient-blur-start),
+    var(--gradient-blur-end),
+    var(--bg),
+    var(--gradient-blur-end),
+    var(--gradient-blur-start)
+  );
+  background-size: 200% 100%;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#__nuxt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  font-family: $font;
+  transition: 0.2s;
+}
+
+.MainWindow {
+  width: 1150px;
+  height: 682px;
+  margin: auto;
+
+  @media screen and (max-width: 1150px) {
+    width: 100%;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+}
+
+.Main {
+  width: 1150px;
+  height: 100%;
+  flex-shrink: 0;
+  background-color: var(--bg);
+  border-radius: 0 0 12px 12px;
+  border: 1px solid var(--bgborder);
+  border-top: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: scroll;
+  box-sizing: content-box;
+
+  &.NoFlex {
+    display: block;
+  }
+
+  @media screen and (max-width: 1150px) {
+    width: 100%;
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+}
+
+.TitleBar {
+  user-select: none;
+  width: 100%;
+  top: 0;
+  height: fit-content;
+  display: flex;
+  flex: 0 1 auto;
+  border-radius: 12px 12px 0 0;
+  border: 1px solid var(--titlebar-bgborder);
+  background: var(--titlebar-bg);
+}
+
+.Flag {
+  user-select: none;
+  margin: 6px;
+  display: flex;
+}
+
+.LogoButton {
+  user-select: none;
+  margin: 6px;
+  width: 34px;
+  height: 34px;
+  display: flex;
+
+  &.End {
+    margin: 6px 6px 6px 0;
+  }
+
+  &:hover {
+    background-color: var(--titlebar-tabhover);
+    border-radius: 8px;
+    cursor: pointer;
+  }
+}
+
+.ThinIcon {
+  user-select: none;
+  width: 13px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--fg);
+  filter: var(--fg-icon);
+  margin: auto;
+}
+
+.Icon {
+  user-select: none;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--fg);
+  filter: var(--fg-icon);
+  margin: auto;
+}
+
+.Tabs {
+  user-select: none;
+  width: fit-content;
+  height: 34px;
+  flex-shrink: 0;
+  margin: auto;
+  display: flex;
+  column-gap: 6px;
+
+  @media (max-width: $breakpoint-mobile) {
+    display: none;
+  }
+}
+
+.Tab {
+  user-select: none;
+  width: 114px;
+  height: 34px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fg);
+  border-radius: 8px;
+  cursor: pointer;
+  background: none;
+  text-decoration: none;
+
+  &.Selected {
+    background: var(--titlebar-tabselected);
+  }
+
+  &:not(.Selected):hover {
+    background: var(--titlebar-tabhover);
+  }
+
+  & p {
+    margin: 0;
+    font-size: $title3;
+    font-weight: bold;
+    width: fit-content;
+  }
+
+  & img {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    fill: var(--fg);
+    margin: 7px;
+    filter: var(--fg-icon);
+  }
+}
+
+.BottomBar {
+  user-select: none;
+  width: 100%;
+  height: fit-content;
+  border-radius: 12px 12px 0 0;
+  border: 1px solid var(--titlebar-bgborder);
+  background: var(--titlebar-bg);
+  display: none;
+
+  @media (max-width: $breakpoint-mobile) {
+    display: flex;
+    bottom: 0;
+  }
+}
+
+.BottomTabs {
+  user-select: none;
+  width: fit-content;
+  height: 100%;
+  flex-shrink: 0;
+  margin: auto;
+  display: flex;
+
+  @media (min-width: $breakpoint-mobile) {
+    display: none;
+  }
+}
+
+.BottomTab {
+  user-select: none;
+  width: 80px;
+  height: 53px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--fg);
+  cursor: pointer;
+  background: none;
+  text-decoration: none;
+
+  &.Selected {
+    background: var(--titlebar-tabselected);
+  }
+
+  &:not(.Selected):hover {
+    background: var(--titlebar-tabhover);
+  }
+
+  & p {
+    margin: 0;
+    font-size: $caption1;
+    font-weight: bold;
+    width: fit-content;
+  }
+
+  & img {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    fill: var(--fg);
+    filter: var(--fg-icon);
+    margin: 4px;
+  }
+}
+
+.HoverText {
+  user-select: none;
+  color: var(--fg);
+  font-size: $caption1;
+  font-weight: bold;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  display: block;
+  top: 3%;
+}
+
+.Badge8831 {
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: -webkit-optimize-contrast;
+}

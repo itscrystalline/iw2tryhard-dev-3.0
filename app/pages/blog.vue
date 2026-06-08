@@ -20,7 +20,7 @@
 
 <script lang="ts">
 import { URL } from "url";
-import "~/assets/css/projects.sass";
+import "~/assets/css/projects.scss";
 </script>
 
 <script setup lang="ts">
