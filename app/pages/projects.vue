@@ -26,7 +26,7 @@
 </template>
 
 <script lang="ts">
-import "~/assets/css/projects.sass";
+import "~/assets/css/projects.scss";
 </script>
 
 <script setup lang="ts">
@@ -36,9 +36,9 @@ type Project = {
   tags: string[],
   links: {
     name: string, 
-    url: URL
+    url: string 
   }[] | undefined,
-  coverImagePath: URL | undefined,
+  coverImagePath: string | undefined,
 }
 const { status, error, data: projects} = useFetch<Project[]>("https://static.iw2tryhard.dev/public/content/projects.json", { lazy: true });
 </script>

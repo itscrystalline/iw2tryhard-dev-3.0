@@ -74,7 +74,7 @@ let currentThemeIndex = 0;
 const toggleTheme = () => {
   currentThemeIndex = (currentThemeIndex + 1) % themes.length;
   // Apply the theme
-  colorMode.preference = themes[currentThemeIndex];
+  colorMode.preference = themes[currentThemeIndex] as string;
 };
 const getIcon = (): string => {
   switch (colorMode.preference) {

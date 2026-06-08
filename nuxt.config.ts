@@ -7,7 +7,7 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
-  css: ["~/assets/css/main.sass"],
+  css: ["~/assets/css/main.scss"],
   modules: ["@nuxt/ui", "@nuxtjs/color-mode"],
   ui: {
     global: true,
@@ -15,8 +15,8 @@ export default defineNuxtConfig({
   vite: {
     css: {
       preprocessorOptions: {
-        sass: {
-          additionalData: '@use "@/assets/_vars.sass" as *\n',
+        scss: {
+          additionalData: '@use "@/assets/_vars.scss" as *;\n',
         },
       },
     },
