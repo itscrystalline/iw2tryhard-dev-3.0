@@ -1,5 +1,5 @@
 <template>
-  <MainWindow selectedTab="projects">
+  <MainWindow selectedTab="blog">
     <div v-if="status === 'pending'">Loading...</div>
     <div v-else-if="status === 'error'">Error fetching projects. ({{ error }})</div>
     <div v-else-if="blogs == null || blogs.length == 0">nothing yet :(</div>
@@ -19,7 +19,6 @@
 </template>
 
 <script lang="ts">
-import { URL } from "url";
 import "~/assets/css/projects.scss";
 </script>
 
@@ -28,8 +27,8 @@ type Blog = {
   title: string,
   description: string,
   tags: string[],
-  contentPath: URL
-  coverImagePath: URL | undefined,
+  contentPath: string
+  coverImagePath: string | undefined,
 }
 const { status, error, data: blogs} = useFetch<Blog[]>("https://static.iw2tryhard.dev/public/content/blogs.json", { lazy: true });
 </script>
