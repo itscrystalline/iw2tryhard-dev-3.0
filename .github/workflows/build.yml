@@ -25,7 +25,7 @@ jobs:
         with:
           registry: ${{ env.REGISTRY }}
           username: itscrystalline 
-          password: ${{ secrets.TOKEN }}
+          password: ${{ secrets.DOCKER_PUSH }}
 
       - name: Build
         run: |
